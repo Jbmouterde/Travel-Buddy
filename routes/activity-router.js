@@ -7,6 +7,7 @@ const Activity = require("../models/activity-model");
 //Routes
 
 activityRoutes.post("/process-activity", (req, res, next) => {
+  console.log("activity");
   const { restaurant, culture, visit, bar, chill } = req.body;
   Activity.create({ restaurant, culture, visit, bar, chill })
     .then(() => {
