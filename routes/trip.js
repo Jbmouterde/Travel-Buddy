@@ -4,7 +4,7 @@ const tripRoutes = express.Router();
 const User = require("../models/user-model");
 const Trip = require("../models/trip-model");
 
-//New route for home-user
+// New route for home-user
 // tripRoutes.get("/home-user", (req, res, next) => {
 //   res.render("home-user/home-user");
 // });
