@@ -127,16 +127,16 @@ tripRoutes.post("/create-trip", (req, res, next) => {
 
 /////////// DEJA Commenté
 //New route for final-trip
-// tripRoutes.get("/final-trip", (req, res, next) => {
-//     //must be connected
+tripRoutes.get("/final-trip", (req, res, next) => {
+    //must be connected
 
-//   // if (!req.user){
-//   //   res.flash("error", "you must be login")
-//   //   res.redirect("/login")
-//   //   return
-//   // }
-//   res.render("home-user/final-trip");
-// });
+  // if (!req.user){
+  //   res.flash("error", "you must be login")
+  //   res.redirect("/login")
+  //   return
+  // }
+  res.render("home-user/final-trip");
+});
 ///////////////
 ////////////////// Vivian
 // test import info final trip
