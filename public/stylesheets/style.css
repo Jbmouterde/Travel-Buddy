@@ -1,23 +1,16 @@
 body {
-  padding: 50px;
+  padding: 20px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-image: url("https://www.comptoir.fr/photo/cuba/voyage-cuba.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
-  margin-top: 70px; }
+  background-size: cover; }
 
 a {
   text-decoration: none;
   color: red; }
 
-footer {
-  background-color: #0A2C42;
-  color: #F7F9F9;
-  height: 80px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0; }
+.ok {
+  float: left; }
 
 .profile {
   float: right; }

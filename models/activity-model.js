@@ -8,7 +8,8 @@ const activitySchema = new Schema({
   culture: { type: String },
   visit: { type: String },
   bar: { type: String },
-  chill: { type: String }
+  chill: { type: String },
+  trip : {type : String}
 });
 
 const Activity = mongoose.model("Activity", activitySchema);

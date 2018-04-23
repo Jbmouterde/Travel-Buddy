@@ -102,7 +102,8 @@ tripRoutes.post("/create-trip", (req, res, next) => {
     returnDate,
     departurePlace,
     numberOfPeople,
-    type
+    type,
+    imageUrl
   } = req.body;
 
   Trip.create({
@@ -112,6 +113,7 @@ tripRoutes.post("/create-trip", (req, res, next) => {
     departurePlace,
     numberOfPeople,
     type,
+    imageUrl,
     owner: req.user._id
   })
     .then(() => {
