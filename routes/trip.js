@@ -1,7 +1,7 @@
 const express = require("express");
 const passport = require("passport");
 const tripRoutes = express.Router();
-const User = require("../models/user-model")
+const User = require("../models/user-model");
 const Trip = require("../models/trip-model");
 
 //New route for home-user
@@ -10,50 +10,48 @@ const Trip = require("../models/trip-model");
 // });
 
 // Show the user
-tripRoutes.get("/home-user", (req,res,next)=> {
-
+tripRoutes.get("/home-user", (req, res, next) => {
   //must be connected
   // if (!req.user){
   //   res.flash("error", "you must be login")
   //   res.redirect("/login")
-  //   return 
+  //   return
   // }
   User.find()
-  .then((userFromDb)=> {
-  res.locals.userList = userFromDb;
-  res.render("home-user/home-user")
-  })
-  .catch((err)=>{
-        next(err)
-  });
+    .then(userFromDb => {
+      res.locals.userList = userFromDb;
+      res.render("home-user/home-user");
+    })
+    .catch(err => {
+      next(err);
+    });
   //
-  Trip.find( {owner : req.user._id})
-  // add the details of the owner 
-  // .populate("owner")
-  .then((tripFromDb)=>{
-    res.locals.tripList = tripFromDb;
-    res.render("home-user/home-user")
-  })
-  
-  .catch((err)=>{
-    next(err)
-  })
-});
+  Trip.find({ owner: req.user._id })
+    // add the details of the owner
+    // .populate("owner")
+    .then(tripFromDb => {
+      res.locals.tripList = tripFromDb;
+      res.render("home-user/home-user");
+    })
 
+    .catch(err => {
+      next(err);
+    });
+});
 
 //New route for create-trip
 tripRoutes.get("/create-trip", (req, res, next) => {
-    //must be connected
+  //must be connected
 
   // if (!req.user){
   //   res.flash("error", "you must be login")
   //   res.redirect("/login")
-  //   return 
+  //   return
   // }
   res.render("home-user/create-trip");
 });
 ////////////
-// post create 
+// post create
 // tripRoutes.post("/create-trip", (req, res, next) => {
 //   const destination = req.body.destination;
 //   const departureDate = req.body.departureDate;
@@ -61,7 +59,7 @@ tripRoutes.get("/create-trip", (req, res, next) => {
 //   const departurePlace = req.body.departurePlace;
 //   const numberOfPeople = req.body.numberOfPeople;
 //   const type = req.body.type;
-//   const image = req.body.image; 
+//   const image = req.body.image;
 
 //   if (destination === "") {
 //     res.render("home-user/home-user", { message: "Put a destination" });
@@ -76,9 +74,9 @@ tripRoutes.get("/create-trip", (req, res, next) => {
 //     returnDate,
 //     departurePlace,
 //     numberOfPeople,
-//     type, 
+//     type,
 //     description,
-//     image 
+//     image
 //   });
 
 //   newTrip.save(err => {
@@ -90,25 +88,40 @@ tripRoutes.get("/create-trip", (req, res, next) => {
 //   });
 // });
 /////////////
-//TEST 
+//TEST
 ///////////
-tripRoutes.post("/create-trip", (req, res, next)=>{
-  if (!req.user){
-    res.flash("error", "you must be login")
-    res.redirect("/login")
-    return 
+tripRoutes.post("/create-trip", (req, res, next) => {
+  if (!req.user) {
+    res.flash("error", "you must be login");
+    res.redirect("/login");
+    return;
   }
-const { destination,departureDate,returnDate,departurePlace,  numberOfPeople, type} = req.body;
+  const {
+    destination,
+    departureDate,
+    returnDate,
+    departurePlace,
+    numberOfPeople,
+    type
+  } = req.body;
 
-Trip.create({ destination,departureDate,returnDate,departurePlace,  numberOfPeople, type, owner : req.user._id })
-.then(()=>{
-res.flash("success", "Trip Created!");
-res.redirect("/final-trip");
-})
-.catch((err)=>{
-  next(err)
-})
-})
+  Trip.create({
+    destination,
+    departureDate,
+    returnDate,
+    departurePlace,
+    numberOfPeople,
+    type,
+    owner: req.user._id
+  })
+    .then(() => {
+      res.flash("success", "Trip Created!");
+      res.redirect("/final-trip");
+    })
+    .catch(err => {
+      next(err);
+    });
+});
 
 ///////////
 //New route for final-trip
@@ -118,45 +131,46 @@ res.redirect("/final-trip");
 //   // if (!req.user){
 //   //   res.flash("error", "you must be login")
 //   //   res.redirect("/login")
-//   //   return 
+//   //   return
 //   // }
 //   res.render("home-user/final-trip");
 // });
 ///////////////
-// test import info final trip  
-tripRoutes.get("/final-trip", (req,res,next)=>{
+// test import info final trip
+
+tripRoutes.get("/final-trip", (req, res, next) => {
   //must be connected
   // if (!req.user){
   //   res.flash("error", "you must be login")
   //   res.redirect("/login")
-  //   return 
+  //   return
   // }
-Trip.find( {owner : req.user._id})
-// add the details of the owner 
-// .populate("owner")
-.then((tripFromDb)=>{
-  res.locals.tripList = tripFromDb;
-  res.render("home-user/final-trip")
-})
+  Trip.find({ owner: req.user._id })
+    // add the details of the owner
+    // .populate("owner")
+    .then(tripFromDb => {
+      res.locals.tripList = tripFromDb;
+      res.render("home-user/final-trip");
+    })
 
-.catch((err)=>{
-  next(err)
-})
-})
+    .catch(err => {
+      next(err);
+    });
+});
+
 ///////////
-// UPDATE THE TRIP 
+// UPDATE THE TRIP
 
 /////////
-// DELETE A TRIP 
-tripRoutes.get('/trips/:tripId/delete', (req,res,next)=>{
+// DELETE A TRIP
+tripRoutes.get("/trips/:tripId/delete", (req, res, next) => {
   Trip.findByIdAndRemove(req.params.tripId)
-  .then(()=>{
-    res.redirect('/home-user')
-  })
-  .catch((err)=>{
-    next(err)
-  })
-})
-
+    .then(() => {
+      res.redirect("/home-user");
+    })
+    .catch(err => {
+      next(err);
+    });
+});
 
 module.exports = tripRoutes;

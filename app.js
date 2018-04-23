@@ -85,4 +85,7 @@ app.use("/", adminRouter);
 const trip = require("./routes/trip");
 app.use("/", trip);
 
+const activity = require("./routes/activity-router");
+app.use("/", activity);
+
 module.exports = app;

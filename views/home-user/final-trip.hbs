@@ -3,13 +3,46 @@
 
 
 <ul>
-{{#each tripList}}
-<li> 
-  <h3> {{this.destination}}</h3>
+  {{#each tripList}}
+  <li>
+    <h3> {{this.destination}}</h3>
+  </li>
+  {{else}}
+  <p> No trip yet</p>
+  <a href="/create-trip"> Create Your trip </a>
+  {{/each}}
 
-</li>
-{{else}}
-<p> No trip yet</p>
-<a href="/create-trip"> Create Your trip  </a>
-{{/each}}
+  <form action="process-activity" method="POST">
+
+    <label>
+      Restaurant :
+      <input type="text" name="restaurant" placeholder="Suggest a Restaurant...">
+
+    </label>
+
+    <label>
+      Cultural Activity :
+      <input type="text" name="culture" placeholder="Go get smarter...">
+    </label>
+
+    <label>
+      Visit :
+      <input type="text" name="visit" placeholder="An absolute go to...">
+    </label>
+
+    <label>
+      Drinks :
+      <input type="text" name="bar" placeholder="Go get some drinks...">
+    </label>
+
+    <label>
+      Laid Back :
+      <input type="text" name="chill" placeholder="For pleasure...">
+    </label>
+    <button>Add an activity</button>
+  </form>
+
+  </a>
 </ul>
+
+{{#each activitylist}} {{this.restaurant}} {{/each}}
