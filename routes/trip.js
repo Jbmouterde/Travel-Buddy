@@ -123,7 +123,7 @@ tripRoutes.post("/create-trip", (req, res, next) => {
     });
 });
 
-///////////
+/////////// DEJA Commenté
 //New route for final-trip
 // tripRoutes.get("/final-trip", (req, res, next) => {
 //     //must be connected
@@ -136,29 +136,30 @@ tripRoutes.post("/create-trip", (req, res, next) => {
 //   res.render("home-user/final-trip");
 // });
 ///////////////
+////////////////// Vivian
 // test import info final trip
 
-tripRoutes.get("/final-trip", (req, res, next) => {
-  //must be connected
-  // if (!req.user){
-  //   res.flash("error", "you must be login")
-  //   res.redirect("/login")
-  //   return
-  // }
-  Trip.find({ owner: req.user._id })
-    // add the details of the owner
-    // .populate("owner")
-    .then(tripFromDb => {
-      res.locals.tripList = tripFromDb;
-      res.render("home-user/final-trip");
-    })
+// tripRoutes.get("/final-trip", (req, res, next) => {
+//   //must be connected
+//   // if (!req.user){
+//   //   res.flash("error", "you must be login")
+//   //   res.redirect("/login")
+//   //   return
+//   // }
+//   Trip.find({ owner: req.user._id })
+//     // add the details of the owner
+//     // .populate("owner")
+//     .then(tripFromDb => {
+//       res.locals.tripList = tripFromDb;
+//       res.render("home-user/final-trip");
+//     })
 
-    .catch(err => {
-      next(err);
-    });
-});
+//     .catch(err => {
+//       next(err);
+//     });
+// });
 
-///////////
+///////////////////////// Vivian
 // UPDATE THE TRIP
 tripRoutes.get("/trips/:tripId/edit", (req, res, next) => {
   Trip.findById(req.params.tripId)

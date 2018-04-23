@@ -2,6 +2,7 @@
 
 
 
+{{!--
 <ul>
   {{#each tripList}}
   <li>
@@ -10,7 +11,7 @@
   {{else}}
   <p> No trip yet</p>
   <a href="/create-trip"> Create Your trip </a>
-  {{/each}}
+  {{/each}} --}}
 
   <form action="process-activity" method="POST">
 
@@ -45,4 +46,4 @@
   </a>
 </ul>
 
-{{#each activitylist}} {{this.restaurant}} {{/each}}
+{{#each activitylist}} {{this._id}} {{/each}}
