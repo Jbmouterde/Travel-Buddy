@@ -5,6 +5,7 @@
 
     </title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    
   </head>
   <body>
 <header>
@@ -14,18 +15,13 @@
       <a href="/home-user">My home</a>
        <a href="/"> Home </a>
     {{#if blahUser}}
-  
+  <div class="profile">
     <strong> {{blahUser.username}}</strong>
-    <img src="{{blahUser.imageUrl}}" with="1Opx" height="40px">
+    <img src="{{blahUser.imageUrl}}" with="5px" height="30px">
  
     <a href="/logout"> Log Out</a>
-
-    {{!-- "ISADMIN" is defined in the model --}}
-   {{#if blahUser.isBoss}}
-
-    <h3> Admin zone </h3>
-    <a href="/admin/users"> All users</a>
-    {{/if}}
+</div>
+   
     {{else}}
       <a href="/signup"> Sign Up  </a>
         <a href="/login"> Log In  </a>
@@ -33,7 +29,12 @@
   </nav>
 </header>
     {{{body}}}
-
+<footer>
+  <nav class="foot">
+    <a href="/about">About</a>
+      <a href="/about">Contact Us</a>
+  </nav>
+</footer>
     <script src='/javascripts/script.js' />
   </body>
 </html>

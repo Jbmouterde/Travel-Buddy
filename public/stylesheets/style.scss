@@ -4,13 +4,42 @@ body {
   background-image : url("https://www.comptoir.fr/photo/cuba/voyage-cuba.jpg");
   background-repeat : no-repeat;
   background-size : cover; 
+ 
+
+    margin-top : 70px;
+  
 }
 a{
   text-decoration: none; 
   
-  color : white 
+  color :red 
 
 }
-a {
-  color: #00B7FF;
+
+
+
+
+footer{
+  background-color : #0A2C42;;
+  color : #F7F9F9;
+  height : 80px;
+  position : fixed; 
+  bottom: 0; left: 0; right: 0;
+}
+.profile {
+  float : right;
+}
+.tripCard{
+  float : left;
+  border : 10px solid transparent;
+}
+// CARD test
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 5px; /* 5px rounded corners */
+}
+
+img {
+  border-radius: 5px 5px 0 0;
 }

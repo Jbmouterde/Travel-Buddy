@@ -17,14 +17,14 @@ tripRoutes.get("/home-user", (req, res, next) => {
   //   res.redirect("/login")
   //   return
   // }
-  User.find()
-    .then(userFromDb => {
-      res.locals.userList = userFromDb;
-      res.render("home-user/home-user");
-    })
-    .catch(err => {
-      next(err);
-    });
+  // User.find()
+  // .then((userFromDb)=> {
+  // res.locals.userList = userFromDb;
+  // res.render("home-user/home-user")
+  // })
+  // .catch((err)=>{
+  //       next(err)
+  // });
   //
   Trip.find({ owner: req.user._id })
     // add the details of the owner
@@ -160,6 +160,34 @@ tripRoutes.get("/final-trip", (req, res, next) => {
 
 ///////////
 // UPDATE THE TRIP
+tripRoutes.get("/trips/:tripId/edit", (req, res, next) => {
+  Trip.findById(req.params.tripId)
+    .then(tripDetails => {
+      res.locals.tripId = req.params.tripId;
+      res.locals.trip = tripDetails;
+      res.render("home-user/update-trip");
+    })
+    .catch(err => {
+      next(err);
+    });
+});
+
+//update trip step 5
+tripRoutes.post("/update-trip/:tripId", (req, res, next) => {
+  // res.send(req.body);
+  const { destination } = req.body;
+  Trip.findByIdAndUpdate(
+    req.params.tripId, // which document to update
+    { destination }, // what changes to make
+    { runValidators: true } // extra settings
+  )
+    .then(() => {
+      res.redirect(`/home-user/home-user`);
+    })
+    .catch(err => {
+      next(err);
+    });
+});
 
 /////////
 // DELETE A TRIP

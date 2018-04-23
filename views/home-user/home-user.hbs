@@ -1,37 +1,46 @@
+
 <h2>Home-User</h2>
 
-<br >
-<br >
-{{blahUser.name}}
-<br >
-<br >
-{{blahUser.firstName}}
-<br >
-<br >
-{{blahUser.username}}
+
+<h1> Welcome {{blahUser.username}} !</h1>
 
 <br >
 <br >
+
+  
+
+ 
 <button>
 <a href="/create-trip">Create a new trip</a>
 </button>
-<ul>
+
+{{!-- <ul> --}}
+
 {{#each tripList}}
-<li> 
+{{!-- <p>  --}}
  
-  <h4> {{this.destination}} </h4>
+  <p> Your Trip to {{this.destination}} ! </p>
+  <h4> With {{this.numberOfPeople}} of your Friends </h4>
+  <h4> From : {{this.departureDate}} </h4>
+  <h4>  To : {{this.returnDate}} </h4>
     <br>
 
   <button>
-  <a href="/trips/{{this._id}}/edit"> Update</a> </button>
+  <a href="/trips/{{this._id}}/edit"> Edit Basic Info </a> </button>
+
+    <br>
+
+  <button>
+  <a href="/final-trip"> Join Your Trip </a> </button>
 
 <button >
 <a href="/trips/{{this._id}}/delete"> Delete</a> </button>
   <br>
-
-</li>
+</div>
+{{!-- </li> --}}
 {{else}}
 <p> No Trip Yet</p>
 <a href="/create-trip">Create a trip</a>
+{{!-- </ul> --}}
 {{/each}}
-</ul>
+
