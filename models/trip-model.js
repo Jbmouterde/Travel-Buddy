@@ -10,12 +10,12 @@ const tripSchema = new Schema(
     numberOfPeople: { type: Number },
     type: { type: String },
     description: { type: String }, 
-    // image : {type : String}, 
-    // owner : {
-    //   type : Schema.Types.ObjectId, 
-    //   ref : "User", 
-    //   required : true
-    // }
+    image : {type : String}, 
+    owner : {
+      type : Schema.Types.ObjectId, 
+      ref : "User", 
+      required : true
+    }
   },
   {
     timestamps: {
