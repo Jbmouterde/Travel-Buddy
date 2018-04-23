@@ -12,5 +12,26 @@
 
 <br >
 <br >
+<button>
+<a href="/create-trip">Create a new trip</a>
+</button>
+<ul>
+{{#each tripList}}
+<li> 
+ 
+  <h4> {{this.destination}} </h4>
+    <br>
 
-<a href="/create-trip">Créer un voyage</a>
+  <button>
+  <a href="/trips/{{this._id}}/edit"> Update</a> </button>
+
+<button >
+<a href="/trips/{{this._id}}/delete"> Delete</a> </button>
+  <br>
+
+</li>
+{{else}}
+<p> No Trip Yet</p>
+<a href="/create-trip">Create a trip</a>
+{{/each}}
+</ul>
