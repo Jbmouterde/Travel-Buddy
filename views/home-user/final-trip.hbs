@@ -1,0 +1,15 @@
+<h1> Welcome to your Trip </h1>
+
+
+
+<ul>
+{{#each tripList}}
+<li> 
+  <h3> {{this.destination}}</h3>
+
+</li>
+{{else}}
+<p> No trip yet</p>
+<a href="/create-trip"> Create Your trip  </a>
+{{/each}}
+</ul>

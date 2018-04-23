@@ -1,0 +1,47 @@
+<h1> Welcome Admin </h1>
+
+
+<p> Hi Admin </p>
+
+
+<h2> Create a new user </h2>
+
+<form action="/process-adding" method="POST">
+<label>
+  Full name : 
+<input type="text" name="name" placeholder="e.g Name "/>
+<br />
+</label>
+<label>
+  Email : 
+<input type="text" name="email" placeholder="e.g iron@hack.com"/>
+<br />
+</label>
+
+<label>
+Password : 
+<input type="password" name="password" placeholder="e.g ********* "/>
+<br />  
+</label>
+
+<button>Create </button>
+</form>
+
+<ul> 
+{{#each userList}}
+<li>
+  <h3> {{this.fullName}}</h3>
+  <ul> 
+    <li> Email : {{this.email}}</li>
+    <li>  Google : {{this.googleID}} </li>
+     <li>  Github : {{this.githubID}} </li>
+     <li> Role : {{this.role}} </li>
+     <li>  Registered : {{this.createdAt}} </li>
+  </ul>
+</li>
+<button >
+<a href="/admin/users/{{this._id}}/delete"> Delete</a> </button>
+<a href="/admin/users/{{this._id}}/add"> Add</a> </button>
+{{/each }}
+
+</ul>

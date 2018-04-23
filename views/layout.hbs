@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Voyage Trip 
+
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+<header>
+  <nav> 
+      <a href="/create-trip">Create a Trip</a>
+      <a href="/final-trip">My trip</a>
+      <a href="/home-user">My home</a>
+       <a href="/"> Home </a>
+    {{#if blahUser}}
+  
+    <strong> {{blahUser.username}}</strong>
+    <img src="{{blahUser.imageUrl}}" with="1Opx" height="40px">
+ 
+    <a href="/logout"> Log Out</a>
+
+    {{!-- "ISADMIN" is defined in the model --}}
+   {{#if blahUser.isBoss}}
+
+    <h3> Admin zone </h3>
+    <a href="/admin/users"> All users</a>
+    {{/if}}
+    {{else}}
+      <a href="/signup"> Sign Up  </a>
+        <a href="/login"> Log In  </a>
+        {{/if}}
+  </nav>
+</header>
+    {{{body}}}
+
+    <script src='/javascripts/script.js' />
+  </body>
+</html>

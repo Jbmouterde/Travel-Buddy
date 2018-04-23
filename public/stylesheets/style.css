@@ -1,0 +1,15 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("https://www.comptoir.fr/photo/cuba/voyage-cuba.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+a {
+  text-decoration: none;
+  color: white; }
+
+a {
+  color: #00B7FF; }
+
+/*# sourceMappingURL=style.css.map */

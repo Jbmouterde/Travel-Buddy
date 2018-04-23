@@ -1,0 +1,61 @@
+
+
+<!-- views/auth/signup.hbs -->
+<h2>Create Your Trip</h2>
+
+<form action="/create-trip" method="POST" id="form-container">
+
+
+  <label for="FirstName">Destination : </label>
+  <input id="firstname" type="text" name="destination" placeholder="What's Your Destination">
+
+  <br>
+  <br>
+
+  <label for="Name">Departure Date : </label>
+  <input id="name" type="date" name="departureDate" placeholder="When do you leave? ">
+
+  <br>
+  <br>
+  <label for="Name">Return Date : </label>
+  <input id="name" type="date" name="returnDate" placeholder="When do you come back? ">
+
+  <br>
+  <br>
+
+  <label for="username">Leaving From :</label>
+  <input id="username" type="text" name="departurePlace" placeholder="From where ?...">
+
+  <br>
+  <br>
+
+
+  <label for="password">Number of participants :</label>
+  <input id="password" type="number" name="numberOfPeople" placeholder="How many are you ? ">
+
+  <br>
+  <br>
+
+  <label for="password">Type of Trip: </label>
+  <input id="password" type="text" name="type" placeholder=" ? ">
+
+  <br>
+  <br>
+
+    {{!-- <label for="text">Your image url : </label>
+  <input  type="text" name="image" placeholder="url of your background image">
+
+  <br>
+  <br> --}}
+
+  <label for="password"> Description of your Trip :</label>
+  <br>
+  <textarea>Tell us more about your trip !
+  </textarea>
+
+  <br>
+  <br>
+
+  <button>
+    Create Your Amazing Trip
+  </button>
