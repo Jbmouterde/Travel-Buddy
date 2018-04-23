@@ -86,5 +86,3 @@ const trip = require("./routes/trip");
 app.use("/", trip);
 
 module.exports = app;
-
-var soleil = "hello jb";
