@@ -19,10 +19,11 @@ activityRoutes.post("/process-activity", (req, res, next) => {
 });
 
 activityRoutes.get("/final-trip", (req, res, next) => {
-  console.log("tto");
-  Activity.findById(req.param.activityId)
+  console.log(req.param.activityId);
+  Activity.findById(req.params.activityId)
     .then(activityfromDb => {
-      res.locals.activitylist = activityfromDb;
+      console.log(req.param.activityId);
+      res.locals.activityList = activityfromDb;
       res.render("home-user/final-trip");
     })
     .catch(err => {
