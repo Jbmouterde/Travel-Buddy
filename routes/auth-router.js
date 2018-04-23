@@ -91,7 +91,23 @@ User.findOne({username})
   next(err)
 });
 });
-
+// GOOGLE LOG IN 
+// google log in 
+router.get("/google/login", 
+passport.authenticate("google", {
+  scope : [
+    "https://www.googleapis.com/auth/plus.login",
+    "https://www.googleapis.com/auth/plus.profile.emails.read"
+  ]
+}));
+router.get("/google/success", 
+passport.authenticate("google", {
+  successRedirect : "/", 
+  successFlash : "Google Log in success!",
+  failureRedirect : "/login",
+  failureFlash : "Google Log in failure!"
+}));
+// END GOOGLE LOG IN 
 router.get("/logout", (req, res, next)=>{
   // "req.logout" is passport's method for logging a user out 
   req.logout();

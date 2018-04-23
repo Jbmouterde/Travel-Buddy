@@ -4,8 +4,8 @@ const User = require("../models/user-model");
 const Trip = require("../models/trip-model");
 // require new 
 //DONT NEED ? 
-// require ("./google-strategy");
-// require ("./github-strategy");
+require ("./google-strategy");
+
 
 
 

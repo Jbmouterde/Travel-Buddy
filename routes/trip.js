@@ -182,7 +182,7 @@ tripRoutes.post("/update-trip/:tripId", (req, res, next) => {
     { runValidators: true } // extra settings
   )
     .then(() => {
-      res.redirect(`/home-user/home-user`);
+      res.redirect(`/home-user`);
     })
     .catch(err => {
       next(err);

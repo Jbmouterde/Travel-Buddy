@@ -19,6 +19,7 @@ const userSchema = new Schema({
   // normal sign up and log in 
   imageName: { type: String },
   imageUrl: { type: String },
+  googleID : { type : String},
   encryptedPassword :  {type : String },
 
 }, 
