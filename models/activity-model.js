@@ -4,12 +4,22 @@ const Schema = mongoose.Schema;
 
 const activitySchema = new Schema({
   //schema fields
-  restaurant: { type: String },
-  culture: { type: String },
-  visit: { type: String },
-  bar: { type: String },
-  chill: { type: String },
-  trip : {type : String}
+  typeOfActivity: { type: String },
+  nameOfActivity: { type: String },
+  activityDetail: { type: String },
+  priceOfActivity: { type: Number },
+  trip: {
+    type: Schema.Types.ObjectId,
+    ref: "Trip",
+    required: true
+  }
+  // restaurant
+  //    { type: String },
+  // culture: { type: String },
+  // visit: { type: String },
+  // bar: { type: String },
+  // chill: { type: String },
+  // trip : {type : String}
 });
 
 const Activity = mongoose.model("Activity", activitySchema);

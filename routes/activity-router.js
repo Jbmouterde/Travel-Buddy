@@ -8,8 +8,19 @@ const Activity = require("../models/activity-model");
 
 activityRoutes.post("/process-activity", (req, res, next) => {
   console.log("activity");
-  const { restaurant, culture, visit, bar, chill } = req.body;
-  Activity.create({ restaurant, culture, visit, bar, chill })
+  const {
+    typeOfActivity,
+    nameOfActivity,
+    activityDetail,
+    priceOfActivity
+  } = req.body;
+  Activity.create({
+    typeOfActivity,
+    nameOfActivity,
+    activityDetail,
+    priceOfActivity,
+    trip: req.trip._id
+  })
     .then(() => {
       res.redirect("final-trip");
     })
@@ -19,8 +30,8 @@ activityRoutes.post("/process-activity", (req, res, next) => {
 });
 
 activityRoutes.get("/final-trip", (req, res, next) => {
-  console.log(req.param.activityId);
-  Activity.findById(req.params.activityId)
+  console.log(req.params.activityId);
+  Activity.find({ owner: req.trip._id })
     .then(activityfromDb => {
       console.log(req.param.activityId);
       res.locals.activityList = activityfromDb;
