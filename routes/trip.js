@@ -143,7 +143,10 @@ Trip.find( {owner : req.user._id})
   next(err)
 })
 })
+///////////
+// UPDATE THE TRIP 
 
+/////////
 // DELETE A TRIP 
 tripRoutes.get('/trips/:tripId/delete', (req,res,next)=>{
   Trip.findByIdAndRemove(req.params.tripId)
