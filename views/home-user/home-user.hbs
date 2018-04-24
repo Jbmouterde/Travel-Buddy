@@ -8,17 +8,7 @@
 <br>
 
 
- <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="{{this.imageUrl}}" alt="Card image cap" width="180px" height="130px">
-  <div class="card-body">
-    <h5 class="card-title">Your Trip to {{this.destination}} !</h5>
-    <h6> With {{this.numberOfPeople}} of your Friends </h6>
-  <h6> From : {{this.departureDate}} </h6>
-  <h6>  To : {{this.returnDate}} </h6>
-    <a href="/final-trip/{{this.id}}" class="btn btn-primary">Join </a>
-    <a href="/trips/{{this._id}}/edit" class="btn btn-primary">Edit</a>
-    <a href="/trips/{{this._id}}/delete" class="btn btn-primary">Delete</a>
-  </div>
+
 
 
 <button class="btn btn-primary">
@@ -37,7 +27,7 @@
         <h6> With {{this.numberOfPeople}} of your Friends </h6>
         <h6> From : {{this.departureDate}} </h6>
         <h6> To : {{this.returnDate}} </h6>
-        <a href="/trips/{{this._id}}" class="btn btn-primary">Join </a>
+        <a href="/final-trip/{{this._id}}" class="btn btn-primary">Join </a>
         <a href="/trips/{{this._id}}/edit" class="btn btn-primary">Edit</a>
         <a href="/trips/{{this._id}}/delete" class="btn btn-primary">Delete</a>
       </div>
