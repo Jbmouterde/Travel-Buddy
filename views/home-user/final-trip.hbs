@@ -1,13 +1,5 @@
-<h1> Welcome {{blahUser.username}} to your trip!</h1>
-<h1> HERE YOUR ACTIVITY </h1>
+<h1> Welcome {{blahUser.username}} to your trip {{this.destination}}!</h1>
 
-
-{{#each activityList}}
-<h3>{{this.typeOfActivity}}</h3>
-<h3>{{this.activityDetail}}</h3>
-
-{{/each}}
-</ul>
 
 {{!-- // ADD --}}
 <h2>What are you looking for ?</h2>
@@ -45,4 +37,39 @@
 
 <div class="my-map"></div>
 
-{{#each activities}} {{activities.trip}} {{/each}}
+
+<h1> HERE YOUR ACTIVITY </h1>
+
+
+{{#each activityList}}
+<h3>{{this.typeOfActivity}}</h3>
+
+
+<a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
+{{!--
+<a href="/final-trip/{{trip}}/delete" class="btn btn-primary">Del </a> --}} {{/each}}
+</ul>
+
+
+{{!-- Comments --}}
+
+<h4> Add your comments</h4>
+
+
+
+<form action="/book/{{book.id}}/process-review" method="POST">
+  <label>
+    Name :
+    <br>
+    <input type="text" name="user" placeholder="Your Name...">
+  </label>
+  <br/>
+  <label for="password"> Message :</label>
+  <br>
+  <textarea>Tell us more about your trip !
+  </textarea>
+  <br>
+
+
+  <button> Submit Souvenir </button>
+</form>
