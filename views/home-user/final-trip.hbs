@@ -1,40 +1,42 @@
-<h1> Welcome to your Trip </h1>
 
 
+<h1> Welcome {{blahUser.username}} to your trip!</h1>
+<h1> HERE YOUR ACTIVITY </h1>
 
-{{!--
-<ul>
-  {{#each tripList}}
-  <li>
-    <h3> {{this.destination}}</h3>
-  </li>
-  {{else}}
-  <p> No trip yet</p>
-  <a href="/create-trip"> Create Your trip </a>
-  {{/each}} --}}
 
-  <form action="process-activity" method="POST">
+{{#each activityList}}
+<h3>{{this.typeOfActivity}}</h3>
+<h3>{{this.activityDetail}}</h3>
 
-    <label>
-      Restaurant :
-      <input type="text" name="typeOfActivity" placeholder=" Suggest a Restaurant... ">
+ {{/each}}
+</ul>
 
-    </label>
+{{!-- // ADD  --}}
+ <h2>What are you looking for ?</h2>
 
-    <label>
-      Cultural Activity :
-      <input type="text " name="nameOfActivity " placeholder="Go get smarter... ">
-    </label>
+<form action="/process-activity/{{this.tripId}}" method="POST">
 
-    <label>
-      Visit :
-      <input type="text " name="activityDetail " placeholder="An absolute go to... ">
-    </label>
+  <label>
+    Type of Activity :
+    <input type="text" name="typeOfActivity" placeholder="What Kind of Activity? ">
+    <br>
+  </label>
 
-    <label>
-      Drinks :
-      <input type="text " name="priceOfActivity " placeholder="Go get some drinks... ">
-    </label>
+  <label>
+    Name :
+    <input type="text" name="nameOfActivity" placeholder="Name ...">
+  </label>
+
+  <label>
+    Detail :
+    <input type="text" name="activityDetail" placeholder="Some détail ..">
+  </label>
+
+  <label>
+    Price :
+    <input type="number" name="priceOfActivity" placeholder="The price ...">
+  </label>
+
 
 
     <button>Add an activity</button>

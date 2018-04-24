@@ -3,6 +3,8 @@ const passport = require("passport");
 const tripRoutes = express.Router();
 const User = require("../models/user-model");
 const Trip = require("../models/trip-model");
+const Activity = require("../models/activity-model");
+
 // NODEMAILER
 const nodemailer = require("nodemailer");
 
@@ -128,28 +130,71 @@ tripRoutes.post("/create-trip", (req, res, next) => {
   })
     .then(() => {
       res.flash("success", "Trip Created!");
-      res.redirect("/final-trip");
+      res.redirect("/home-user");
     })
     .catch(err => {
       next(err);
     });
 });
 
-/////////// DEJA Commenté
+/////////// DEJA Commentédd
+
 //New route for final-trip
 tripRoutes.get("/final-trip/:tripId", (req, res, next) => {
-    //must be connected
+//     //must be connected
 
-  // if (!req.user){
-  //   res.flash("error", "you must be login")
-  //   res.redirect("/login")
-  //   return
-  // }
-  res.render("home-user/final-trip");
+//   // if (!req.user){
+//   //   res.flash("error", "you must be login")
+//   //   res.redirect("/login")
+//   //   return
+//   // }
+
+  Activity.find({trip:req.params.tripId })
+  // add the details of the owner
+  // .populate("owner")
+  .then(activityFromDb => {
+    res.locals.activityList = activityFromDb;
+    res.locals.tripId = req.params.tripId;
+
+    res.render("home-user/final-trip");
+  })
+
+  .catch(err => {
+    next(err);
+  });
 });
-///////////////
+//  // ACTIVITY SUITE
+tripRoutes.post("/process-activity/:tripId", (req, res, next) => {
+    const {
+      typeOfActivity,
+      nameOfActivity,
+      activityDetail,
+      priceOfActivity
+    } = req.body;
+    const trip = req.params.tripId
+    Activity.create({
+      typeOfActivity,
+      nameOfActivity,
+      activityDetail,
+      priceOfActivity,
+      trip
+    })
+      .then(() => {
+        res.redirect("/final-trip/" + trip);
+      })
+      .catch(err => {
+        next(err);
+      });
+  });
+  
+
+  // SHOW THE SEED 
+
+/////////////// activity import 
 ////////////////// Vivian
 // test import info final trip
+
+
 
 // tripRoutes.get("/final-trip", (req, res, next) => {
 //   //must be connected
