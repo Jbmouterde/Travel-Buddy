@@ -148,57 +148,48 @@ tripRoutes.get("/final-trip/:tripId", (req, res, next) => {
 //   //   res.redirect("/login")
 //   //   return
 //   // }
-  // Activity.find({})
-  // // add the details of the owner
-  // // .populate("owner")
-  // .then(activityFromDb => {
-  //   res.locals.activityList = activityFromDb;
+
+  Activity.find({trip:req.params.tripId })
+  // add the details of the owner
+  // .populate("owner")
+  .then(activityFromDb => {
+    res.locals.activityList = activityFromDb;
+    res.locals.tripId = req.params.tripId;
+
     res.render("home-user/final-trip");
   })
 
-//   .catch(err => {
-//     next(err);
-//   });
-// });
+  .catch(err => {
+    next(err);
+  });
+});
 //  // ACTIVITY SUITE
-// tripRoutes.post("/process-activity", (req, res, next) => {
-//     const {
-//       typeOfActivity,
-//       nameOfActivity,
-//       activityDetail,
-//       priceOfActivity
-//     } = req.body;
-  
-//     Activity.create({
-//       typeOfActivity,
-//       nameOfActivity,
-//       activityDetail,
-//       priceOfActivity,
-//       // trip : req.user
-//     })
-//       .then(() => {
-//         res.redirect("/final-trip/:tripId");
-//       })
-//       .catch(err => {
-//         next(err);
-//       });
-//   });
+tripRoutes.post("/process-activity/:tripId", (req, res, next) => {
+    const {
+      typeOfActivity,
+      nameOfActivity,
+      activityDetail,
+      priceOfActivity
+    } = req.body;
+    const trip = req.params.tripId
+    Activity.create({
+      typeOfActivity,
+      nameOfActivity,
+      activityDetail,
+      priceOfActivity,
+      trip
+    })
+      .then(() => {
+        res.redirect("/final-trip/" + trip);
+      })
+      .catch(err => {
+        next(err);
+      });
+  });
   
 
   // SHOW THE SEED 
-  tripRoutes.get("/final-trip/:tripId",(req,res,next)=> {
-    Activity.find(req.params.activityId)
-    //add the author
-    .populate('trip')
-    .then((activityFromDb)=>{
-    res.locals.actList = activityFromDb;
-    res.render("/final-trip/:tripId")  
-    })
-    .catch((err)=>{
-      
-      next(err)
-    });
-  });
+
 /////////////// activity import 
 ////////////////// Vivian
 // test import info final trip

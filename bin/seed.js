@@ -58,6 +58,7 @@ activities.forEach(oneActivity => {
       console.log(`Created Trip ${tripDetails.destination}`);
       //change 'author' to be ObjectId
       oneActivity.trip = tripDetails._id;
+      console.log(tripDetails._id)
       // Book.create(oneBook)
       // const bookPromise = Book.create(oneBook);
       //return bookPromise;
