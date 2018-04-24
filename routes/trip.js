@@ -3,6 +3,16 @@ const passport = require("passport");
 const tripRoutes = express.Router();
 const User = require("../models/user-model");
 const Trip = require("../models/trip-model");
+// NODEMAILER
+const nodemailer = require("nodemailer");
+
+const transport = nodemailer.createTransport({
+  service: "Gmail",
+  auth: {
+    user: process.env.gmail_user,
+    pass: process.env.gmail_pass
+  }
+});
 
 //New route for home-user
 // tripRoutes.get("/home-user", (req, res, next) => {
@@ -191,6 +201,31 @@ tripRoutes.post("/update-trip/:tripId", (req, res, next) => {
       next(err);
     });
 });
+//// NODEMAILER 
+tripRoutes.get("/invit", (req,res, next)=>{
+  res.render('home-user/invit');
+});
+tripRoutes.post("/email-trip" , (req, res, next)=>{
+  const {emailFriend} =req.body;
+
+transport.sendMail({
+  from :process.env.gmail_user,
+  to: emailFriend,
+  subject: "Join a Trip",
+  text: `Hello,
+  Welcome my friends `,
+  html: `<h1>Hello</h1>
+  <p>Welcome my friends</p>`
+})
+.then (()=>{
+res.redirect('/')
+})
+.catch((err)=>{
+  next(err)
+});
+});
+
+//
 
 /////////
 // DELETE A TRIP
