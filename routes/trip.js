@@ -3,6 +3,8 @@ const passport = require("passport");
 const tripRoutes = express.Router();
 const User = require("../models/user-model");
 const Trip = require("../models/trip-model");
+const Activity = require("../models/activity-model");
+
 // NODEMAILER
 const nodemailer = require("nodemailer");
 
@@ -135,7 +137,7 @@ tripRoutes.post("/create-trip", (req, res, next) => {
     });
 });
 
-/////////// DEJA Commenté
+/////////// DEJA Commentédd
 //New route for final-trip
 tripRoutes.get("/final-trip/:tripId", (req, res, next) => {
     //must be connected
@@ -145,11 +147,46 @@ tripRoutes.get("/final-trip/:tripId", (req, res, next) => {
   //   res.redirect("/login")
   //   return
   // }
-  res.render("home-user/final-trip");
+  Activity.find({ trip: req.user._id })
+  // add the details of the owner
+  // .populate("owner")
+  .then(activityFromDb => {
+    res.locals.activityList = activityFromDb;
+    res.render("home-user/final-trip");
+  })
+
+  .catch(err => {
+    next(err);
+  });
 });
-///////////////
+ 
+tripRoutes.post("/process-activity", (req, res, next) => {
+    const {
+      typeOfActivity,
+      nameOfActivity,
+      activityDetail,
+      priceOfActivity
+    } = req.body;
+  
+    Activity.create({
+      typeOfActivity,
+      nameOfActivity,
+      activityDetail,
+      priceOfActivity
+    })
+      .then(() => {
+        res.redirect("/final-trip/:tripId");
+      })
+      .catch(err => {
+        next(err);
+      });
+  });
+  
+/////////////// activity import 
 ////////////////// Vivian
 // test import info final trip
+
+
 
 // tripRoutes.get("/final-trip", (req, res, next) => {
 //   //must be connected

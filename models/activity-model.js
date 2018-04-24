@@ -11,7 +11,7 @@ const activitySchema = new Schema({
   trip: {
     type: Schema.Types.ObjectId,
     ref: "Trip",
-    required: true
+    
   }
   // restaurant
   //    { type: String },
