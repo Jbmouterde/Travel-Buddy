@@ -1,43 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Voyage Trip 
 
-    </title>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<head>
+  <title>Voyage Trip
 
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    
-  </head>
-  <body>
-<header>
-  <nav> 
-      <a href="/create-trip">Create a Trip</a>
-      <a href="/final-trip">My trip</a>
-      <a href="/home-user">My home</a>
-       <a href="/"> Home </a>
+  </title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+
+</head>
+
+<body>
+  <header>
+    <div class="top-nav" id="myTopnav">
+      <nav>
+        <a href="/create-trip">Create a Trip</a>
+        <a href="/final-trip">My trip</a>
+        <a href="/home-user">My home</a>
+        <a href="/" class="active"> Home </a>
+    </div>
+
     {{#if blahUser}}
-  <div class="profile">
-    <strong> {{blahUser.username}}</strong>
-    
-    <img src="{{blahUser.imageUrl}}" with="5px" height="30px">
- 
-    <a href="/logout"> Log Out</a>
-</div>
-   
+    <div class="profile">
+      <strong> {{blahUser.username}}</strong>
+
+      <img src="{{blahUser.imageUrl}}" with="5px" height="30px">
+
+      <a href="/logout"> Log Out</a>
+    </div>
+
     {{else}}
-      <a href="/signup"> Sign Up  </a>
-        <a href="/login"> Log In  </a>
-        {{/if}}
-  </nav>
-</header>
-    {{{body}}}
-<footer>
-  <nav class="foot">
-    <a href="/about">About</a>
+    <a href="/signup"> Sign Up </a>
+    <a href="/login"> Log In </a>
+    {{/if}}
+    </nav>
+  </header>
+  {{{body}}}
+  <footer>
+    <nav class="foot">
+      <a href="/about">About</a>
       <a href="/about">Contact Us</a>
-  </nav>
-</footer>
-    <script src='/javascripts/script.js' />
-  </body>
+    </nav>
+  </footer>
+  <script src='/javascripts/script.js' />
+</body>
+
 </html>
