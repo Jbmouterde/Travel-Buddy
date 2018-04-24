@@ -48,7 +48,7 @@ User.create({firstName,username,name, email, encryptedPassword,  imageName: orig
     imageUrl: secure_url,})
 .then (()=>{
   // req.flash("sucess", "You have a signed up! Try logging in.");
-  res.redirect("/");
+  res.redirect("/login");
 })
 .catch ((err)=>{
   next(err)

@@ -137,7 +137,7 @@ tripRoutes.post("/create-trip", (req, res, next) => {
 
 /////////// DEJA Commenté
 //New route for final-trip
-tripRoutes.get("/final-trip", (req, res, next) => {
+tripRoutes.get("/final-trip/:tripId", (req, res, next) => {
     //must be connected
 
   // if (!req.user){
