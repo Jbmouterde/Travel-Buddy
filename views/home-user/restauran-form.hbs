@@ -1,0 +1,29 @@
+<h2>Add a Restaurant</h2>
+
+<form action="/process-resto" method="POST">
+  <label>
+    Name:
+    <input type="text" name="name" placeholder="McDonald's" />
+  </label>
+  <br />
+
+  <label>
+    Description:
+    <textarea name="description" placeholder="Cheap burger joint"></textarea>
+  </label>
+  <br />
+
+  <label>
+    Location:
+    <input type="text" placeholder="Louvre" class="location-input" />
+  </label>
+  <br />
+
+  <!-- these will be set by out Place Autocomplete -->
+  <input type="hidden" name="latitude" class="lat-input" />
+  <input type="hidden" name="longitude" class="lng-input" />
+
+  <button>Save This Restaurant</button>
+</form>
+
+<div class="my-map" style="display: none;"></div>

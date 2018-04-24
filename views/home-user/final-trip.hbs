@@ -1,5 +1,3 @@
-
-
 <h1> Welcome {{blahUser.username}} to your trip!</h1>
 <h1> HERE YOUR ACTIVITY </h1>
 
@@ -8,11 +6,11 @@
 <h3>{{this.typeOfActivity}}</h3>
 <h3>{{this.activityDetail}}</h3>
 
- {{/each}}
+{{/each}}
 </ul>
 
-{{!-- // ADD  --}}
- <h2>What are you looking for ?</h2>
+{{!-- // ADD --}}
+<h2>What are you looking for ?</h2>
 
 <form action="/process-activity/{{this.tripId}}" method="POST">
 
@@ -39,10 +37,12 @@
 
 
 
-    <button>Add an activity</button>
-  </form>
+  <button>Add an activity</button>
+</form>
 
-  </a>
+</a>
 </ul>
+
+<div class="my-map"></div>
 
 {{#each activities}} {{activities.trip}} {{/each}}
