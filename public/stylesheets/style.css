@@ -1,11 +1,11 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-image: url("https://www.comptoir.fr/photo/cuba/voyage-cuba.jpg");
+  background-image: url("http://www.portail-des-vacances.com/wp-content/uploads/2017/06/Road-trip-en-voiture-comment-le-preparer-avant-le-depart-.jpg");
   background-repeat: no-repeat;
   background-size: cover; }
 
 .top-nav {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.8);
   overflow: hidden; }
 
 .top-nav a {
@@ -21,8 +21,8 @@ body {
   color: black; }
 
 .active {
-  background-color: #2225e9;
-  color: seashell; }
+  background-color: #ddd;
+  color: #33302d; }
 
 /*nav a {
   text-decoration: none;
@@ -50,6 +50,59 @@ a {
 
 img {
   border-radius: 5px 5px 0 0; }
+
+.wrapper-title {
+  margin: 0 auto;
+  text-align: center; }
+
+.container-title-par {
+  position: relative;
+  top: 200px;
+  background-color: rgba(223, 235, 247, 0.6);
+  display: inline-block;
+  padding: 20px; }
+
+.card-1 {
+  position: relative;
+  top: 250px;
+  left: 200px;
+  background-color: rgba(223, 235, 247, 0.6);
+  display: inline-block;
+  padding: 50px; }
+
+.card-1 h3 {
+  text-decoration: underline; }
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 80px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  overflow: hidden; }
+
+.fa {
+  padding: 20px;
+  font-size: 20px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%; }
+
+.fa:hover {
+  opacity: 0.7; }
+
+/* Facebook */
+.fa-facebook {
+  background: #3b5998;
+  color: white; }
+
+/* Twitter */
+.fa-twitter {
+  background: #55acee;
+  color: white; }
 
 @media screen and (max-width: 600px) {
   .topnav a:not(:first-child) {
