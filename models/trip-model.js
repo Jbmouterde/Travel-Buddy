@@ -17,6 +17,7 @@ const tripSchema = new Schema(
       required : true
     }
   },
+  
   {
     timestamps: {
       createdAt: "created_at",

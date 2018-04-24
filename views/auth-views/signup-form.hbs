@@ -1,50 +1,59 @@
-<h2> Sign Up frere </h2>
+<h2> Sign Up </h2>
 
 <form action="/process-signup" method="POST" enctype="multipart/form-data">
   <label> 
     FirstName : 
-<input type="text" name="firstName" placeholder="e.g IronHack name "/>
+<input type="text" name="firstName" class="form-control" placeholder="e.g IronHack name "/>
+
+  </label>
+  <br />
 <br /> 
-<br />
-  </label> 
    <label> 
-    name : 
-<input type="text" name="name" placeholder="e.g IronHack name "/>
-<br /> 
-<br />
-  </label> 
+    Name : 
+<input type="text" name="name"  class="form-control" placeholder="e.g IronHack name "/>
 
+  </label> 
+<br />
+<br />
  <label> 
-    username : 
-<input type="text" name="username" placeholder="e.g IronHack name "/>
-<br /> 
-<br />
+    Username : 
+<input type="text" name="username" class="form-control" placeholder="e.g IronHack name "/>
+
   </label> 
 
-
+<br />
+<br />
 <label>
   Email : 
-<input type="text" name="email" placeholder="e.g iron@hack.com"/>
-<br />
-<br />
-</label>
+<input type="text" name="email" class="form-control" placeholder="e.g iron@hack.com"/>
 
+</label>
+<br />
+<br />
 <label>
 Password : 
-<input type="password" name="password" placeholder="e.g ********* "/>
-<br />  
+<input type="password" name="password" class="form-control"  placeholder="e.g ********* "/>
+
 
 </label>
+<br />
+<br />
 
-
-  <label for="email">Your Profil Picture:
-    <input type="File" name="image" placeholder="Your email address">
+  <label>
+     Your Profil Picture:
+    <input type="File" name="image" class="form-control btn btn-info" placeholder="...">
   </label>
 
+
   <br>
   <br>
 
-<button> Sign Up Freeer</button>
+ <div class="checkbox">
+    <label>
+      <input type="checkbox"> I want to receive emails from you 🙈
+    </label>
+  </div>
+<button class="btn btn-primary"> Sign Up </button>
 </form>
-
-<a href="/google/login"> Sign Up with google</a>
+<button class="btn btn-primary">
+<a href="/google/login"> Sign Up with google</a> </button>

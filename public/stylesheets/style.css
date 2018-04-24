@@ -5,9 +5,12 @@ body {
   background-repeat: no-repeat;
   background-size: cover; }
 
-a {
+nav a {
   text-decoration: none;
   color: red; }
+
+a {
+  color: white; }
 
 .ok {
   float: left; }
