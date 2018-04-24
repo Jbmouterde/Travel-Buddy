@@ -1,7 +1,27 @@
 
 
 <h1> Welcome {{blahUser.username}} to your trip {{tripList.destination}} !</h1>
+<h1> HERE YOUR ACTIVITY </h1>
 
+{{#each actList}}
+<li> <h3>{{this.typeOfActivity}}</h3></li>
+<li> <h3>{{this.activityDetail}}</h3></li>
+<li> <h3>{{this.trip.destination}}</h3></li>
+ {{/each}}
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- // ADD  --}}
  <h2>What are you looking for ?</h2>
 
 <form action="/process-activity" method="POST">

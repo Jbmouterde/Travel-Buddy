@@ -130,7 +130,7 @@ tripRoutes.post("/create-trip", (req, res, next) => {
   })
     .then(() => {
       res.flash("success", "Trip Created!");
-      res.redirect("/final-trip");
+      res.redirect("/home-user");
     })
     .catch(err => {
       next(err);
@@ -140,48 +140,64 @@ tripRoutes.post("/create-trip", (req, res, next) => {
 /////////// DEJA Commentédd
 //New route for final-trip
 tripRoutes.get("/final-trip/:tripId", (req, res, next) => {
-    //must be connected
+//     //must be connected
 
-  // if (!req.user){
-  //   res.flash("error", "you must be login")
-  //   res.redirect("/login")
-  //   return
-  // }
-  Activity.find({ trip: req.user._id })
-  // add the details of the owner
-  // .populate("owner")
-  .then(activityFromDb => {
-    res.locals.activityList = activityFromDb;
+//   // if (!req.user){
+//   //   res.flash("error", "you must be login")
+//   //   res.redirect("/login")
+//   //   return
+//   // }
+//   Activity.find({})
+//   // add the details of the owner
+//   // .populate("owner")
+//   .then(activityFromDb => {
+//     res.locals.activityList = activityFromDb;
     res.render("home-user/final-trip");
   })
 
-  .catch(err => {
-    next(err);
-  });
-});
- 
-tripRoutes.post("/process-activity", (req, res, next) => {
-    const {
-      typeOfActivity,
-      nameOfActivity,
-      activityDetail,
-      priceOfActivity
-    } = req.body;
+//   .catch(err => {
+//     next(err);
+//   });
+// });
+//  // ACTIVITY SUITE
+// tripRoutes.post("/process-activity", (req, res, next) => {
+//     const {
+//       typeOfActivity,
+//       nameOfActivity,
+//       activityDetail,
+//       priceOfActivity
+//     } = req.body;
   
-    Activity.create({
-      typeOfActivity,
-      nameOfActivity,
-      activityDetail,
-      priceOfActivity
+//     Activity.create({
+//       typeOfActivity,
+//       nameOfActivity,
+//       activityDetail,
+//       priceOfActivity,
+//       // trip : req.user
+//     })
+//       .then(() => {
+//         res.redirect("/final-trip/:tripId");
+//       })
+//       .catch(err => {
+//         next(err);
+//       });
+//   });
+  
+
+  // SHOW THE SEED 
+  tripRoutes.get("/final-trip/:tripId",(req,res,next)=> {
+    Activity.find()
+    //add the author
+    .populate('trip')
+    .then((activityFromDb)=>{
+    res.locals.actList = activityFromDb;
+    res.render("/final-trip/:tripId")  
     })
-      .then(() => {
-        res.redirect("/final-trip/:tripId");
-      })
-      .catch(err => {
-        next(err);
-      });
+    .catch((err)=>{
+      
+      next(err)
+    });
   });
-  
 /////////////// activity import 
 ////////////////// Vivian
 // test import info final trip
