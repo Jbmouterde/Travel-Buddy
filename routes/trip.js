@@ -138,6 +138,7 @@ tripRoutes.post("/create-trip", (req, res, next) => {
 });
 
 /////////// DEJA Commentédd
+
 //New route for final-trip
 tripRoutes.get("/final-trip/:tripId", (req, res, next) => {
 //     //must be connected
@@ -147,11 +148,11 @@ tripRoutes.get("/final-trip/:tripId", (req, res, next) => {
 //   //   res.redirect("/login")
 //   //   return
 //   // }
-//   Activity.find({})
-//   // add the details of the owner
-//   // .populate("owner")
-//   .then(activityFromDb => {
-//     res.locals.activityList = activityFromDb;
+  // Activity.find({})
+  // // add the details of the owner
+  // // .populate("owner")
+  // .then(activityFromDb => {
+  //   res.locals.activityList = activityFromDb;
     res.render("home-user/final-trip");
   })
 
@@ -186,7 +187,7 @@ tripRoutes.get("/final-trip/:tripId", (req, res, next) => {
 
   // SHOW THE SEED 
   tripRoutes.get("/final-trip/:tripId",(req,res,next)=> {
-    Activity.find()
+    Activity.find(req.params.activityId)
     //add the author
     .populate('trip')
     .then((activityFromDb)=>{

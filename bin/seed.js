@@ -46,7 +46,7 @@ const activities = [
       type: "bat",
       description: "oaa",
       imageUrl: "",
-      owner: "5addb80d2399fa0eaba79457"
+      owner: "5ade002660304f53f70c6384"
     }
   }
 ];
