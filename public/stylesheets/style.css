@@ -2,8 +2,7 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-image: url("http://www.portail-des-vacances.com/wp-content/uploads/2017/06/Road-trip-en-voiture-comment-le-preparer-avant-le-depart-.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
-  color: white; }
+  background-size: cover; }
 
 .topnav {
   background-color: #333;
@@ -104,6 +103,10 @@ body {
   text-decoration: none;
   background-color: #666;
   color: white; }
+
+.my-map {
+  width: 300px;
+  height: 300px; }
 
 @media screen and (max-width: 600px) {
   .topnav.responsive {
