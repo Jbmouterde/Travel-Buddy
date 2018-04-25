@@ -167,16 +167,19 @@ tripRoutes.get("/final-trip/:tripId", (req, res, next) => {
 tripRoutes.post("/process-activity/:tripId", (req, res, next) => {
     const {
       typeOfActivity,
-      nameOfActivity,
       activityDetail,
-      priceOfActivity
+      name, 
+      latitude,
+      longitude
     } = req.body;
+    const nameOfActivity = {
+      coordinates: [ latitude, longitude ]};
     const trip = req.params.tripId
     Activity.create({
       typeOfActivity,
       nameOfActivity,
+      name,
       activityDetail,
-      priceOfActivity,
       trip
     })
       .then(() => {
@@ -286,16 +289,45 @@ tripRoutes.get("/trips/:tripId/delete", (req, res, next) => {
 
 
 // DELETE AN ACTIVITY
-// tripRoutes.get("/final-trip/:tripId/:activityId/delete", (req, res, next) => {
-//   Activity.findByIdAndRemove(req.params.activityId)
-//     .then(() => {
-//       var trip = req.params.tripId
-//       res.redirect("/final-trip/" + trip);
-//     })
-//     .catch(err => {
-//       next(err);
-//     });
-// });
+tripRoutes.get("/final-trip/:tripId/:activityId/delete", (req, res, next) => {
+  Activity.findByIdAndRemove(req.params.activityId)
+    .then(() => {
+      var trip = req.params.tripId
+      res.redirect("/final-trip/" + trip);
+    })
+    .catch(err => {
+      next(err);
+    });
+});
 // MESSAGE REVIEW IN THE GROUP TRIP 
+tripRoutes.post('/process-review/:tripId/:activityId', (req,res,next)=>{
+  const {user, message}= req.body;
+Activity.findByIdAndUpdate(
+  req.params.activityId,
+  {
+    $push: {
+      comments: { user, message}}
+    },
+  {runValidators : true}
+)
+.then(()=>{
+  var trip = req.params.tripId
+  res.redirect("/final-trip/" + trip);
+})
+.catch((err)=>{
+  next(err)
+})
+});
+// GOOGLE MAPS TEST  works !! 
+
+tripRoutes.get("/act/data", (req, res, next) => {
+  Activity.find()
+    .then((activityFromDb) => {
+      res.json(activityFromDb);
+    })
+    .catch((err) => {
+      next(err);
+    });
+});
 
 module.exports = tripRoutes;

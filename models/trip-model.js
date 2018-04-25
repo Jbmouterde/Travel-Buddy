@@ -8,9 +8,9 @@ const tripSchema = new Schema(
     returnDate: Date,
     departurePlace: { type: String },
     numberOfPeople: { type: Number },
-    typeOfActivity: { 
+    typeOfTrip: { 
     type: String,
-    enum : ["restaurant","hotel","sport","culture", "chill"]
+    enum : ["culture","friends","work"]
   },
     description: { type: String }, 
     imageUrl : {type : String}, 
