@@ -250,23 +250,35 @@ tripRoutes.post("/update-trip/:tripId", (req, res, next) => {
     });
 });
 //// NODEMAILER 
-tripRoutes.get("/invit", (req,res, next)=>{
+tripRoutes.get("/invit/:tripId", (req,res, next)=>{
+  var trip = req.params.tripId
+  console.log(trip)
   res.render('home-user/invit');
 });
-tripRoutes.post("/email-trip" , (req, res, next)=>{
-  const {emailFriend} =req.body;
 
+
+
+
+//POST 
+tripRoutes.post("/email-trip" , (req, res, next)=>{
+ 
+  const {emailFriend} =req.body
+  var trip = req.params.tripId
 transport.sendMail({
   from :process.env.gmail_user,
   to: emailFriend,
   subject: "Join a Trip",
   text: `Hello,
-  Welcome my friends `,
+  One of your friends invit you to join a Trip,
+  Please use this link to join his group :  
+  http://localhost:3000/final-trip/{{this._id}}`,
   html: `<h1>Hello</h1>
-  <p>Welcome my friends</p>`
+  <p>One of your friends invit you to join a Trip, <br>
+  Please use this link to join his group : <br>
+  <a href="http://localhost:3000/final-trip/{{this._id}}">Confirm</a></p>`
 })
 .then (()=>{
-res.redirect('/')
+res.redirect('/home-user')
 })
 .catch((err)=>{
   next(err)

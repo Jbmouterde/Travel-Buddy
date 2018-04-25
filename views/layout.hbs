@@ -35,9 +35,11 @@
 
     <div class="topnav" id="myTopnav">
       <a href="/" class="active">Home</a>
+
+      {{#if blahUser}}
       <a href="/create-trip">Create a Trip</a>
       <a href="/home-user">My Trips</a>
-
+{{/if}}
       {{!--
       <div class="container-btn-login">
         <a href="/login" class="login">Log In</a>

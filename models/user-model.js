@@ -21,7 +21,6 @@ const userSchema = new Schema({
   imageUrl: { type: String },
   googleID : { type : String},
   encryptedPassword :  {type : String },
-
 }, 
 {
   timestamps: true
