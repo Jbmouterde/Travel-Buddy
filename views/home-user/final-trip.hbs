@@ -24,14 +24,17 @@
 </select>
 
   <label>
-    Name :
-    <input type="text" name="nameOfActivity"  class="location-input" placeholder="Name ...">
+    Find Your Activity :
+    <input type="text" name="nameOfActivity"  class="location-input" placeholder="Geolocalisation">
 
   <!-- these will be set by out Place Autocomplete -->
   <input type="hidden" name="latitude" class="lat-input" />
   <input type="hidden" name="longitude" class="lng-input" />
   </label>
-
+ <label>
+    Name :
+    <input type="text" name="name" placeholder="The name ....">
+  </label>
   <label>
     Detail :
     <input type="text" name="activityDetail" placeholder="Some détail ..">
@@ -53,54 +56,45 @@
 
 {{#each activityList}}
  {{#if this.isCulture}}
- <div class="card cardi " style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title"> {{this.typeOfActivity}} !</h5>
+<div class="test">
+        <h5>{{this.typeOfActivity}} !</h5>
      
-        <h6> Name : {{this.nameOfActivity}} </h6>
+        <h6> Name : {{this.name}} </h6>
         <p> Description: {{this.activityDetail}} </p>
      <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
-      </div>
- <hr>
+      
+</div>
  {{/if}}
 {{/each}}
 {{#each activityList}}
  {{#if this.isSport}}
- <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title"> {{this.typeOfActivity}} !</h5>
+<h5>{{this.typeOfActivity}} !</h5>
      
-        <h6> Name : {{this.nameOfActivity}} </h6>
+       <h6> Name : {{this.name}} </h6>
         <p> Description: {{this.activityDetail}} </p>
      <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
-      </div>
- <hr>
+
  {{/if}}
 {{/each}}
 {{#each activityList}}
  {{#if this.isRestaurant}}
- <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title"> {{this.typeOfActivity}} !</h5>
+<h5>{{this.typeOfActivity}} !</h5>
      
-        <h6> Name : {{this.nameOfActivity}} </h6>
+       <h6> Name : {{this.name}} </h6>
         <p> Description: {{this.activityDetail}} </p>
      <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
-      </div>
- <hr>
+
  {{/if}}
 {{/each}}
  {{#each activityList}}
  {{#if this.isHotel}}
- <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title"> {{this.typeOfActivity}} !</h5>
+ <div class="test">
+<h5>{{this.typeOfActivity}} !</h5>
      
-        <h6> Name : {{this.nameOfActivity}} </h6>
+       <h6> Name : {{this.name}} </h6>
         <p> Description: {{this.activityDetail}} </p>
      <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
-      </div>
- <hr>
+</div>
  {{/if}}
 {{/each}}
 
@@ -112,8 +106,6 @@
 
 
 {{!-- Comments --}}
-
-
 
 
 <h3>Your Message</h3>

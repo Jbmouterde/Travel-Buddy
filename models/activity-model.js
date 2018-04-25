@@ -14,6 +14,7 @@ const activitySchema = new Schema({
       { type: Number }
     ]
   },
+  name: { type: String },
   activityDetail: { type: String },
   priceOfActivity: { type: Number },
   comments : [{

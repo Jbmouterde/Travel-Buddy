@@ -168,16 +168,17 @@ tripRoutes.post("/process-activity/:tripId", (req, res, next) => {
     const {
       typeOfActivity,
       activityDetail,
+      name, 
       latitude,
       longitude
     } = req.body;
     const nameOfActivity = {
-      type: 'Point',
       coordinates: [ latitude, longitude ]};
     const trip = req.params.tripId
     Activity.create({
       typeOfActivity,
       nameOfActivity,
+      name,
       activityDetail,
       trip
     })
