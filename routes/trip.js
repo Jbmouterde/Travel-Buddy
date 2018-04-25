@@ -313,5 +313,16 @@ Activity.findByIdAndUpdate(
   next(err)
 })
 });
+// GOOGLE MAPS TEST  works !! 
+
+tripRoutes.get("/act/data", (req, res, next) => {
+  Activity.find()
+    .then((activityFromDb) => {
+      res.json(activityFromDb);
+    })
+    .catch((err) => {
+      next(err);
+    });
+});
 
 module.exports = tripRoutes;

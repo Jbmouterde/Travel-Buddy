@@ -61,12 +61,10 @@
         <p> Description: {{this.activityDetail}} </p>
      <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
       </div>
-
-
  <hr>
  {{/if}}
-
-
+{{/each}}
+{{#each activityList}}
  {{#if this.isSport}}
  <div class="card" style="width: 18rem;">
       <div class="card-body">
@@ -78,8 +76,8 @@
       </div>
  <hr>
  {{/if}}
-
-
+{{/each}}
+{{#each activityList}}
  {{#if this.isRestaurant}}
  <div class="card" style="width: 18rem;">
       <div class="card-body">
@@ -91,9 +89,8 @@
       </div>
  <hr>
  {{/if}}
-
-
- 
+{{/each}}
+ {{#each activityList}}
  {{#if this.isHotel}}
  <div class="card" style="width: 18rem;">
       <div class="card-body">
@@ -105,9 +102,9 @@
       </div>
  <hr>
  {{/if}}
-
-
 {{/each}}
+
+
 </div>
 {{!-- <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
 

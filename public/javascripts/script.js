@@ -29,7 +29,7 @@ new google.maps.Marker({
 
 new google.maps.Marker({
   position: {
-    lat: 48.866667,
+    lat: 49.866667,
     lng: 2.333333
   },
   map: map,
@@ -50,24 +50,24 @@ navigator.geolocation.getCurrentPosition(result => {
 });
 
 // retrieve restaurant data from our backend
-// axios
-//   .get("/resto/data")
-//   .then(response => {
-//     const restoList = response.data;
-//     console.log("tata");
-//     restoList.forEach(oneResto => {
-//       const [lat, lng] = oneResto.location.coordinates;
-//       new google.maps.Marker({
-//         position: { lat, lng },
-//         map: map,
-//         title: oneResto.name,
-//         animation: google.maps.Animation.DROP
-//       });
-//     });
-//   })
-//   .catch(err => {
-//     alert("Something went wrong! 💩");
-//   });
+axios
+  .get("/act/data")
+  .then(response => {
+    const activityList = response.data;
+    console.log("tata");
+    activityList.forEach(oneActivity => {
+      const [lat, lng] = oneActivity.nameOfActivity.coordinates;
+      new google.maps.Marker({
+        position: { lat, lng },
+        map: map,
+        title: oneActivity.typeOfActivity,
+        animation: google.maps.Animation.DROP
+      });
+    });
+  })
+  .catch(err => {
+    // alert("Something went wrong! 💩");
+  });
 
 const locationInput = document.querySelector(".location-input");
 const latInput = document.querySelector(".lat-input");
