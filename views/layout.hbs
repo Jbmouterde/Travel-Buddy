@@ -15,48 +15,95 @@
 
 <body>
   <header>
-    <div class="top-nav" id="myTopnav">
-      <nav>
-        <a href="/" class="active"> Home </a>
-        <a href="/create-trip">Create a Trip</a>
-        <a href="/home-user">My home</a>
+    {{!-- {{#if blahUser}}
+
+
+    <div class="profile">
+      <strong> {{blahUser.username}}</strong>
+
+      <img src="{{blahUser.imageUrl}}" with="5px" height="30px">
+
+      <a href="/logout"> Log Out</a>
+    </div>
+
+    {{else}}
+    <a href="/signup"> Sign Up </a>
+    <a href="/login"> Log In </a>
+    {{/if}} --}}
 
 
 
-        {{#if blahUser}}
-   
-  
-        <div class="profile">
-          <strong> {{blahUser.username}}</strong>
+    <div class="topnav" id="myTopnav">
+      <a href="/" class="active">Home</a>
+      <a href="/create-trip">Create a Trip</a>
+      <a href="/home-user">My Trips</a>
 
-          <img src="{{blahUser.imageUrl}}" with="5px" height="30px">
-
-          <a href="/logout"> Log Out</a>
-        </div>
-
-        {{else}}
-        <a href="/signup"> Sign Up </a>
-        <a href="/login"> Log In </a>
-        {{/if}}
-      </nav>
-  </header>
-  </div>
-  {{{body}}}
+      {{!--
+      <div class="container-btn-login">
+        <a href="/login" class="login">Log In</a>
+      </div> --}} {{#if blahUser}}
 
 
-  <div class="footer">
+      <div class="profile">
+        <strong> {{blahUser.username}}</strong>
 
-    <a href="/about">About</a>
-    <a href="/about">Contact Us</a>
-    <a href="#" class="fa-facebook"></a>
-    <a href="#" class="fa-twitter"></a>
+        <img src="{{blahUser.imageUrl}}" with="5px" height="30px">
 
-  </div>
+        <a href="/logout"> Log Out</a>
+      </div>
+
+      {{else}}
+      <a href="/signup"> Sign Up </a>
+      <a href="/login"> Log In </a>
+      {{/if}}
+    </div>
 
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2WpclP5Z8zSKT7msJ1s9acAA5mY9Pizg&libraries=places"></script>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="/javascripts/script.js"></script>
+    </div>
+
+    <div id="mySidenav" class="sidenav">
+      <a href="/signup" id="about">User Infos</a>
+      <a href="/logout" id="projects">Log Out</a>
+      <a href="#" id="blog">Settings</a>
+
+    </div>
+
+
+    {{{body}}}
+
+
+    <div class="footer">
+
+      <div class="wrapper-contact">
+        <a href="/about" class="contact">Contact Us</a>
+      </div>
+
+      <div class="icon-bar">
+        <a href="#" class="facebook">
+          <i class="fa fa-facebook"></i>
+        </a>
+        <a href="#" class="twitter">
+          <i class="fa fa-twitter"></i>
+        </a>
+        <a href="#" class="google">
+          <i class="fa fa-google"></i>
+        </a>
+        <a href="#" class="linkedin">
+          <i class="fa fa-linkedin"></i>
+        </a>
+        <a href="#" class="youtube">
+          <i class="fa fa-youtube"></i>
+        </a>
+      </div>
+
+
+    </div>
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2WpclP5Z8zSKT7msJ1s9acAA5mY9Pizg&libraries=places"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/javascripts/script.js"></script>
+
 </body>
 
 </html>

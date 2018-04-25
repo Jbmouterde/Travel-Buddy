@@ -7,6 +7,10 @@
 // );
 // alert();
 
+//////
+
+//////
+
 const mapDiv = document.querySelector(".my-map");
 
 const map = new google.maps.Map(mapDiv, {
