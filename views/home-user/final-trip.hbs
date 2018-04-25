@@ -6,28 +6,36 @@
 
 <form action="/process-activity/{{this.tripId}}" method="POST">
 
-  <label>
+  {{!-- <label>
     Type of Activity :
     <input type="text" name="typeOfActivity" placeholder="What Kind of Activity? ">
     <br>
-  </label>
+  </label> --}}
+<p>
+       <label for="le_nom">Kind of Activity</label><br />
+       <select name="typeOfActivity" id="le_nom">
+           <option name="restaurant" value="restaurant">Restaurant</option>
+           <option name="hotel" value="hotel">Hôtel</option>
+           <option name="culture" value="culture">Culture</option>
+           <option name="sport" value="sport">Sports</option>
+          
+
+
+</select>
 
   <label>
     Name :
-    <input type="text" name="nameOfActivity" placeholder="Name ...">
+    <input type="text" name="nameOfActivity"  class="location-input" placeholder="Name ...">
+
+  <!-- these will be set by out Place Autocomplete -->
+  <input type="hidden" name="latitude" class="lat-input" />
+  <input type="hidden" name="longitude" class="lng-input" />
   </label>
 
   <label>
     Detail :
     <input type="text" name="activityDetail" placeholder="Some détail ..">
   </label>
-
-  <label>
-    Price :
-    <input type="number" name="priceOfActivity" placeholder="The price ...">
-  </label>
-
-
 
   <button>Add an activity</button>
 </form>
@@ -40,26 +48,79 @@
 <div class="my-map"></div>
 
 
-<h1> HERE YOUR ACTIVITY </h1>
+<h3> The List of Your Activity :</h3>
 
 
 {{#each activityList}}
-<h3>{{this.typeOfActivity}}</h3>
+ {{#if this.isCulture}}
+ <div class="card cardi " style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"> {{this.typeOfActivity}} !</h5>
+     
+        <h6> Name : {{this.nameOfActivity}} </h6>
+        <p> Description: {{this.activityDetail}} </p>
+     <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
+      </div>
 
-{{!-- 
-<a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
-{{!-- --}}
-<a href="/final-trip/{{trip}}/delete" class="btn btn-primary">Del </a> --}} {{/each}}
-</ul>
+
+ <hr>
+ {{/if}}
+
+
+ {{#if this.isSport}}
+ <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"> {{this.typeOfActivity}} !</h5>
+     
+        <h6> Name : {{this.nameOfActivity}} </h6>
+        <p> Description: {{this.activityDetail}} </p>
+     <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
+      </div>
+ <hr>
+ {{/if}}
+
+
+ {{#if this.isRestaurant}}
+ <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"> {{this.typeOfActivity}} !</h5>
+     
+        <h6> Name : {{this.nameOfActivity}} </h6>
+        <p> Description: {{this.activityDetail}} </p>
+     <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
+      </div>
+ <hr>
+ {{/if}}
+
+
+ 
+ {{#if this.isHotel}}
+ <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"> {{this.typeOfActivity}} !</h5>
+     
+        <h6> Name : {{this.nameOfActivity}} </h6>
+        <p> Description: {{this.activityDetail}} </p>
+     <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
+      </div>
+ <hr>
+ {{/if}}
+
+
+{{/each}}
+</div>
+{{!-- <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
+
+</ul> --}}
 
 
 {{!-- Comments --}}
 
-<h4> Add your comments</h4>
 
 
 
-<form action="/book/{{book.id}}/process-review" method="POST">
+<h3>Your Message</h3>
+<form action="/process-review/{{trip}}" method="POST">
   <label>
     Name :
     <br>
@@ -68,7 +129,7 @@
   <br/>
   <label for="password"> Message :</label>
   <br>
-  <textarea>Tell us more about your trip !
+  <textarea name="message">Tell us more about your trip !
   </textarea>
   <br>
 

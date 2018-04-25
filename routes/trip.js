@@ -169,14 +169,12 @@ tripRoutes.post("/process-activity/:tripId", (req, res, next) => {
       typeOfActivity,
       nameOfActivity,
       activityDetail,
-      priceOfActivity
     } = req.body;
     const trip = req.params.tripId
     Activity.create({
       typeOfActivity,
       nameOfActivity,
       activityDetail,
-      priceOfActivity,
       trip
     })
       .then(() => {
@@ -286,16 +284,34 @@ tripRoutes.get("/trips/:tripId/delete", (req, res, next) => {
 
 
 // DELETE AN ACTIVITY
-// tripRoutes.get("/final-trip/:tripId/:activityId/delete", (req, res, next) => {
-//   Activity.findByIdAndRemove(req.params.activityId)
-//     .then(() => {
-//       var trip = req.params.tripId
-//       res.redirect("/final-trip/" + trip);
-//     })
-//     .catch(err => {
-//       next(err);
-//     });
-// });
+tripRoutes.get("/final-trip/:tripId/:activityId/delete", (req, res, next) => {
+  Activity.findByIdAndRemove(req.params.activityId)
+    .then(() => {
+      var trip = req.params.tripId
+      res.redirect("/final-trip/" + trip);
+    })
+    .catch(err => {
+      next(err);
+    });
+});
 // MESSAGE REVIEW IN THE GROUP TRIP 
+tripRoutes.post('/process-review/:tripId/:activityId', (req,res,next)=>{
+  const {user, message}= req.body;
+Activity.findByIdAndUpdate(
+  req.params.activityId,
+  {
+    $push: {
+      comments: { user, message}}
+    },
+  {runValidators : true}
+)
+.then(()=>{
+  var trip = req.params.tripId
+  res.redirect("/final-trip/" + trip);
+})
+.catch((err)=>{
+  next(err)
+})
+});
 
 module.exports = tripRoutes;
