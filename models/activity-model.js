@@ -8,7 +8,12 @@ const activitySchema = new Schema({
     type: String,
     enum : ["restaurant","hotel","culture","sport"]
   },
-  nameOfActivity: { type: String },
+  nameOfActivity: {
+    type: { type: String },
+    coordinates: [
+      { type: Number }
+    ]
+  },
   activityDetail: { type: String },
   priceOfActivity: { type: Number },
   comments : [{
@@ -29,6 +34,9 @@ const activitySchema = new Schema({
   // trip : {type : String}
 });
 
+
+
+activitySchema.index({ location: "2dsphere" });
 
 activitySchema.virtual("isCulture").get(function(){
   return this.typeOfActivity === "culture";
