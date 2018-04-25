@@ -114,7 +114,7 @@ tripRoutes.post("/create-trip", (req, res, next) => {
     returnDate,
     departurePlace,
     numberOfPeople,
-    type,
+    typeOfTrip,
     imageUrl
   } = req.body;
 
@@ -124,7 +124,7 @@ tripRoutes.post("/create-trip", (req, res, next) => {
     returnDate,
     departurePlace,
     numberOfPeople,
-    type,
+    typeOfTrip,
     imageUrl,
     owner: req.user._id
   })

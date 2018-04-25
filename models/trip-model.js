@@ -8,7 +8,10 @@ const tripSchema = new Schema(
     returnDate: Date,
     departurePlace: { type: String },
     numberOfPeople: { type: Number },
-    type: { type: String },
+    typeOfActivity: { 
+    type: String,
+    enum : ["restaurant","hotel","sport","culture", "chill"]
+  },
     description: { type: String }, 
     imageUrl : {type : String}, 
     owner : {
