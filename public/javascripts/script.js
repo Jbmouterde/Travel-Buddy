@@ -5,35 +5,35 @@
 //   },
 //   false
 // );
-alert();
+// alert();
 
 const mapDiv = document.querySelector(".my-map");
 
 const map = new google.maps.Map(mapDiv, {
   zoom: 13,
   center: {
-    lat: 18.4655,
-    lng: -66.1057
+    lat: 48.866667,
+    lng: 2.333333
   }
 });
 
 new google.maps.Marker({
   position: {
-    lat: 18.4655,
-    lng: -66.1057
+    lat: 48.866667,
+    lng: 2.333333
   },
   map: map,
-  title: "San Juan, Puerto Rico",
+  title: "Paris, France",
   animation: google.maps.Animation.DROP
 });
 
 new google.maps.Marker({
   position: {
-    lat: 18.4481,
-    lng: -66.0642
+    lat: 48.866667,
+    lng: 2.333333
   },
   map: map,
-  title: "Santurce, Puerto Rico",
+  title: "Paris, France",
   animation: google.maps.Animation.DROP
 });
 
@@ -50,24 +50,24 @@ navigator.geolocation.getCurrentPosition(result => {
 });
 
 // retrieve restaurant data from our backend
-axios
-  .get("/resto/data")
-  .then(response => {
-    const restoList = response.data;
-    console.log("tata");
-    restoList.forEach(oneResto => {
-      const [lat, lng] = oneResto.location.coordinates;
-      new google.maps.Marker({
-        position: { lat, lng },
-        map: map,
-        title: oneResto.name,
-        animation: google.maps.Animation.DROP
-      });
-    });
-  })
-  .catch(err => {
-    alert("Something went wrong! 💩");
-  });
+// axios
+//   .get("/resto/data")
+//   .then(response => {
+//     const restoList = response.data;
+//     console.log("tata");
+//     restoList.forEach(oneResto => {
+//       const [lat, lng] = oneResto.location.coordinates;
+//       new google.maps.Marker({
+//         position: { lat, lng },
+//         map: map,
+//         title: oneResto.name,
+//         animation: google.maps.Animation.DROP
+//       });
+//     });
+//   })
+//   .catch(err => {
+//     alert("Something went wrong! 💩");
+//   });
 
 const locationInput = document.querySelector(".location-input");
 const latInput = document.querySelector(".lat-input");
