@@ -6,7 +6,7 @@
 
   </title>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
     crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel='stylesheet' href='/stylesheets/style.css' />
@@ -35,10 +35,10 @@
 
     <div class="topnav" id="myTopnav">
       <a href="/" class="active">Home</a>
+      {{#if blahUser}}
       <a href="/create-trip">Create a Trip</a>
       <a href="/home-user">My Trips</a>
-
-      {{!--
+      {{/if}} {{!--
       <div class="container-btn-login">
         <a href="/login" class="login">Log In</a>
       </div> --}} {{#if blahUser}}
@@ -61,48 +61,51 @@
 
     </div>
 
+    {{#if blahUser}}
     <div id="mySidenav" class="sidenav">
       <a href="/signup" id="about">User Infos</a>
       <a href="/logout" id="projects">Log Out</a>
       <a href="#" id="blog">Settings</a>
 
     </div>
+    {{/if}}
+  </header>
 
 
-    {{{body}}}
+  {{{body}}}
 
 
-    <div class="footer">
+  <div class="footer">
 
-      <div class="wrapper-contact">
-        <a href="/about" class="contact">Contact Us</a>
-      </div>
+    <div class="wrapper-contact">
+      <a href="/about" class="contact">Contact Us</a>
+    </div>
 
-      <div class="icon-bar">
-        <a href="#" class="facebook">
-          <i class="fa fa-facebook"></i>
-        </a>
-        <a href="#" class="twitter">
-          <i class="fa fa-twitter"></i>
-        </a>
-        <a href="#" class="google">
-          <i class="fa fa-google"></i>
-        </a>
-        <a href="#" class="linkedin">
-          <i class="fa fa-linkedin"></i>
-        </a>
-        <a href="#" class="youtube">
-          <i class="fa fa-youtube"></i>
-        </a>
-      </div>
-
-
+    <div class="icon-bar">
+      <a href="#" class="facebook">
+        <i class="fa fa-facebook"></i>
+      </a>
+      <a href="#" class="twitter">
+        <i class="fa fa-twitter"></i>
+      </a>
+      <a href="#" class="google">
+        <i class="fa fa-google"></i>
+      </a>
+      <a href="#" class="linkedin">
+        <i class="fa fa-linkedin"></i>
+      </a>
+      <a href="#" class="youtube">
+        <i class="fa fa-youtube"></i>
+      </a>
     </div>
 
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2WpclP5Z8zSKT7msJ1s9acAA5mY9Pizg&libraries=places"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="/javascripts/script.js"></script>
+  </div>
+
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2WpclP5Z8zSKT7msJ1s9acAA5mY9Pizg&libraries=places"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="/javascripts/script.js"></script>
 
 </body>
 
