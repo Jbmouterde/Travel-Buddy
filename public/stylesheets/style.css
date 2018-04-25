@@ -104,6 +104,9 @@ img {
   background: #55acee;
   color: white; }
 
+.my-map {
+  height: 500px; }
+
 @media screen and (max-width: 600px) {
   .topnav a:not(:first-child) {
     display: none; }
