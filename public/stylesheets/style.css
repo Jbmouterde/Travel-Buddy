@@ -66,6 +66,10 @@ body {
   margin: 0 auto;
   text-align: center; }
 
+.my-map {
+  height: 300px;
+  width: 300px; }
+
 .container-title-par {
   position: relative;
   top: 100px;
