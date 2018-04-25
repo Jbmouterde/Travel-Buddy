@@ -1,10 +1,11 @@
-document.addEventListener(
-  "DOMContentLoaded",
-  () => {
-    console.log("IronGenerator JS imported successfully!");
-  },
-  false
-);
+// document.addEventListener(
+//   "DOMContentLoaded",
+//   () => {
+//     console.log("IronGenerator JS imported successfully!");
+//   },
+//   false
+// );
+alert();
 
 const mapDiv = document.querySelector(".my-map");
 
@@ -53,7 +54,7 @@ axios
   .get("/resto/data")
   .then(response => {
     const restoList = response.data;
-
+    console.log("tata");
     restoList.forEach(oneResto => {
       const [lat, lng] = oneResto.location.coordinates;
       new google.maps.Marker({
