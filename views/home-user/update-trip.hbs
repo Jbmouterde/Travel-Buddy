@@ -3,11 +3,32 @@
 <form action="/update-trip/{{tripId}}" method="POST" id="form-container">
 
 
-  <label for="FirstName">Destination : </label>
+  <label for="FirstName"> New destination : </label>
   <input id="firstname" type="text" name="destination"  value="{{tripList.destination}}" placeholder="What's Your Destination">
 
   <br>
   <br>
+  <label for="FirstName">New Departure Date : </label>
+  <input id="firstname" type="date" name="departureDate"  value="{{tripList.departureDate}}" placeholder="What's Your Destination">
+
+  <br>
+  <br>
+  <label for="FirstName">New return Date :  </label>
+  <input id="firstname" type="date" name="returnDate"  value="{{tripList.returnDate}}" placeholder="What's Your Destination">
+
+  <br>
+  <br>
+  <label for="FirstName">New leaving From : </label>
+  <input id="firstname" type="text" name="departurePlace"  value="{{tripList.departurePlace}}" placeholder="What's Your Destination">
+
+  <br>
+  <br>
+  <label for="FirstName">New number of participants : </label>
+  <input id="firstname" type="number" name="numberOfPeople"  value="{{tripList.numberOfPeople}}" placeholder="What's Your Destination">
+
+  <br>
+  <br>
+
     <button>
    Update Your Amazing Trip
   </button>

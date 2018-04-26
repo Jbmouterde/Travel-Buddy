@@ -240,10 +240,16 @@ tripRoutes.get("/trips/:tripId/edit", (req, res, next) => {
 //update trip step 5
 tripRoutes.post("/update-trip/:tripId", (req, res, next) => {
   // res.send(req.body);
-  const { destination } = req.body;
+  const { destination,   departureDate,
+    returnDate,
+    departurePlace,
+    numberOfPeople } = req.body;
   Trip.findByIdAndUpdate(
     req.params.tripId, // which document to update
-    { destination }, // what changes to make
+    { destination,    departureDate,
+      returnDate,
+      departurePlace,
+      numberOfPeople }, // what changes to make
     { runValidators: true } // extra settings
   )
     .then(() => {
