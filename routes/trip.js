@@ -150,6 +150,8 @@ tripRoutes.get("/final-trip/:tripId", (req, res, next) => {
 //   // }
 
   Activity.find({trip:req.params.tripId })
+  //later
+  // .populate("Trip")
   // add the details of the owner
   // .populate("owner")
   .then(activityFromDb => {
@@ -157,6 +159,8 @@ tripRoutes.get("/final-trip/:tripId", (req, res, next) => {
     res.locals.tripId = req.params.tripId;
 
     res.render("home-user/final-trip");
+   
+
   })
 
   .catch(err => {
@@ -311,31 +315,35 @@ tripRoutes.get("/final-trip/:tripId/:activityId/delete", (req, res, next) => {
       next(err);
     });
 });
-// MESSAGE REVIEW IN THE GROUP TRIP 
-tripRoutes.post('/process-review/:tripId/:activityId', (req,res,next)=>{
-  const {user, message}= req.body;
-Activity.findByIdAndUpdate(
-  req.params.activityId,
+// MESSAGE REVIEW IN THE GROUP TRIP // WORKSSSSSSSS
+tripRoutes.post('/process-review/:tripId', (req,res,next)=>{
+  const {user, comments,imgUrl}= req.body;
+Trip.findByIdAndUpdate(
+  req.params.tripId,
   {
     $push: {
-      comments: { user, message}}
+      reviews: { user, comments,imgUrl}}
     },
   {runValidators : true}
 )
 .then(()=>{
-  var trip = req.params.tripId
-  res.redirect("/final-trip/" + trip);
+  res.redirect(`/final-trip/${req.params.tripId}`);
 })
 .catch((err)=>{
   next(err)
 })
 });
+
+
+
+
+
 // GOOGLE MAPS TEST  works !! 
 
 tripRoutes.get("/act/data", (req, res, next) => {
   Activity.find()
-    .then((activityFromDb) => {
-      res.json(activityFromDb);
+    .then((tripFromDb) => {
+      res.json(tripFromDb);
     })
     .catch((err) => {
       next(err);

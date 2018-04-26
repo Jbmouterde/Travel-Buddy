@@ -17,9 +17,6 @@ const activitySchema = new Schema({
   name: { type: String },
   activityDetail: { type: String },
   priceOfActivity: { type: Number },
-  comments : [{
-    user : {type : String , required : true}, 
-    message : {type : String}}],
   trip: {
     type: Schema.Types.ObjectId,
     ref: "Trip",
