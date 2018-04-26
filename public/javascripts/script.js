@@ -19,6 +19,7 @@ const map = new google.maps.Map(mapDiv, {
     lat: 48.866667,
     lng: 2.333333
   }
+  
 });
 
 new google.maps.Marker({
@@ -50,6 +51,7 @@ navigator.geolocation.getCurrentPosition(result => {
     map: map,
     title: "Your Location",
     animation: google.maps.Animation.DROP
+    
   });
 });
 
