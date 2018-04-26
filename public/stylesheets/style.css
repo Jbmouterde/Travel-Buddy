@@ -313,4 +313,24 @@ h5 {
     width: 100%;
     text-align: left; } }
 
+.culture {
+  float: left;
+  border: 1px solid white;
+  height: 400px; }
+
+.hotel {
+  float: left;
+  border: 1px solid white;
+  height: 400px; }
+
+.restaurant {
+  float: left;
+  border: 1px solid white;
+  height: 400px; }
+
+.sport {
+  float: left;
+  border: 1px solid white;
+  height: 400px; }
+
 /*# sourceMappingURL=style.css.map */

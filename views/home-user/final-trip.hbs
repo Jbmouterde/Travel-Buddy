@@ -59,56 +59,60 @@
   <h5 id="title-centered"> The List of Your Activity :</h5>
   <div class="acti">
 
-    <button class="btn"> Culture</button>
-
-    {{#each activityList}} {{#if this.isCulture}}
+   <div class="culture">
+ <button class="btn"> Culture</button>
+    {{#each activityList}}
+     {{#if this.isCulture}}
 
     <h5>{{this.typeOfActivity}} !</h5>
 
     <h6> Name : {{this.name}} </h6>
     <p> Description: {{this.activityDetail}} </p>
-    <a href="/final-trip/{{trip._id}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
+    <a href="/final-trip/{{trip._id}}/{{this._id}}/delete" class="btn btn-primary"> x </a>
 
 
     {{/if}} {{/each}}
+    </div>
+    <div class="sport">
     <button class="btn"> Sport</button>
     {{#each activityList}} {{#if this.isSport}}
     <h5>{{this.typeOfActivity}} !</h5>
 
     <h6> Name : {{this.name}} </h6>
     <p> Description: {{this.activityDetail}} </p>
-    <a href="/final-trip/{{trip._id}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
+    <a href="/final-trip/{{trip._id}}/{{this._id}}/delete" class="btn btn-primary"> x </a>
 
     {{/if}} {{/each}}
+    </div> <div class="restaurant">
     <button class="btn"> Restaurant</button>
     {{#each activityList}} {{#if this.isRestaurant}}
     <h5>{{this.typeOfActivity}} !</h5>
 
     <h6> Name : {{this.name}} </h6>
     <p> Description: {{this.activityDetail}} </p>
-    <a href="/final-trip/{{trip._id}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
+    <a href="/final-trip/{{trip._id}}/{{this._id}}/delete" class="btn btn-primary"> x </a>
 
     {{/if}} {{/each}}
+    </div>
+    <div class="hotel">
     <button class="btn"> Hotel </button>
     {{#each activityList}} {{#if this.isHotel}}
-    <div class="test">
+ 
       <h5>{{this.typeOfActivity}} !</h5>
 
       <h6> Name : {{this.name}} </h6>
       <p> Description: {{this.activityDetail}} </p>
-      <a href="/final-trip/{{trip._id}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
+      <a href="/final-trip/{{trip._id}}/{{this._id}}/delete" class="btn btn-primary"> x </a>
+
+
+
+{{/if}} {{/each}} 
+</div>
     </div>
 
   </div>
 
-  <div class="content">
-
-  </div>
-</div>
-
-{{/if}} {{/each}} 
-
-</ul> 
+{{!-- </ul> 
  <h3>Your Message</h3>
 <form action="/process-review/{{this.tripId}}" method="POST">
   <label>
@@ -121,15 +125,15 @@
   <br>
   <textarea name="comments">Tell us more about your trip !
   </textarea>
-  <br> 
+  <br>  --}}
   {{!-- <label>
     Your Pictures:
     <input type="File" name="imgUrl" class="form-control btn btn-info" placeholder="..." />
   </label> --}}
-  <br>
+  {{!-- <br>
   <button> Submit Souvenir </button>
 
-</form>
+</form> --}}
 
 <ul>
   {{#if activityList}} {{#each this.trip.reviews}}

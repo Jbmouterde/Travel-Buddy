@@ -108,3 +108,19 @@ window.onclick = function(event) {
     }
   }
 };
+
+$("body > div.wrapper-final-message > div > div:nth-child(1) > button").click(function(){
+  $(".culture").slideToggle(1500)
+});
+
+$("body > div.wrapper-final-message > div > div.restaurant > button").click(function(){
+  $(".restaurant").slideToggle(1500)
+});
+
+$("body > div.wrapper-final-message > div > div.sport > button").click(function(){
+  $(".sport").slideToggle(1500)
+});
+
+$("body > div.wrapper-final-message > div > div.hotel > button").click(function(){
+  $(".hotel").slideToggle(1500)
+});
