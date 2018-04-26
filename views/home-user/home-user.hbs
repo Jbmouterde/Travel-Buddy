@@ -1,70 +1,110 @@
-<h2>
-  Home-User</h2>
-
-
-<h1> Welcome {{blahUser.username}} !</h1>
-
-<br>
-<br>
-
-
-
-
-
-<button class="btn btn-primary">
-  <a href="/create-trip">Create a new trip</a>
-</button>
-
 {{!--
-<ul> --}} {{#each tripList}} {{!--
-  <p> --}}
+<h2>Home-User</h2> --}}
 
 
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="{{this.imageUrl}}" alt="Card image cap" width="180px" height="130px">
-      <div class="card-body">
-        <h5 class="card-title">Your Trip to {{this.destination}} !</h5>
-        <h6> With {{this.numberOfPeople}} of your Friends </h6>
-        <h6> From : {{this.departureDate}} </h6>
-        <h6> To : {{this.returnDate}} </h6>
-        <a href="/final-trip/{{this._id}}" class="btn btn-primary">Join </a>
-        <a href="/trips/{{this._id}}/edit" class="btn btn-primary">Edit</a>
-        <a href="/trips/{{this._id}}/delete" class="btn btn-primary">Delete</a>
-        <a href="/invit/{{this._id}}" class="btn btn-primary">Invit Your Friends </a>
+<!--<h1 class="title-home-user"> Welcome {{blahUser.username}} !</h1>-->
 
-      </div>
+<br>
+<br> {{!--
+<div class="container-btn-create">
+  <button>
+    <a href="/create-trip" class="create-trip">Create a new trip</a>
+  </button>
+</div> --}} {{!--
 
-    </div>
-    </div>
+<p> --}} {{!--
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{{this.imageUrl}}" alt="Card image cap" width="180px" height="130px">
+    <div class="card-body">
+      <h5 class="card-title">Your Trip to {{this.destination}} !</h5>
+      <h6> With {{this.numberOfPeople}} of your Friends </h6>
+      <h6> From : {{this.departureDate}} </h6>
+      <h6> To : {{this.returnDate}} </h6>
+      <a href="/final-trip/{{this._id}}" class="btn btn-primary">Join </a>
+      <a href="/trips/{{this._id}}/edit" class="btn btn-primary">Edit</a>
+      <a href="/trips/{{this._id}}/delete" class="btn btn-primary">Delete</a>
+      <a href="/invit/{{this._id}}" class="btn btn-primary">Invit Your Friends </a>
 
+    </div> --}} {{!-- </div>
+
+
+  </div> --}}
+
+  <div class="card-new-trip">
+    <img src="" alt="">
     <div class="container">
-      <div class="row"></div>
+      <h2>A Very Cool Way to Organise Your Trip !</h2>
+      <h4>
+        <b>
+          <a href="/create-trip">Let's go on an adventure !</a>
+        </b>
+      </h4>
+
     </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
 
-    {{!-- USE TO BE GOOD --}} {{!--
-    <p> Your Trip to {{this.destination}} ! </p>
-    <h4> With {{this.numberOfPeople}} of your Friends </h4>
-    <h4> From : {{this.departureDate}} </h4>
-    <h4> To : {{this.returnDate}} </h4>
-    <img src="{{this.imageUrl}}" width="40px" height="40px" />
-    <br> --}} {{!--
-    <button>
-      <a href="/trips/{{this._id}}/edit"> Edit Basic Info </a>
-    </button>
-    <br>
-    <button>
-      <a href="/final-trip"> Join Your Trip </a>
-    </button>
+  <br>
+  <br> {{#each tripList}} {{!--
+  <div class="card">
+    <img src="{{this.imageUrl}}" alt="" width="150px" height="100px">
+    <div class="container-text-infos">
+      <h4>
+        <b>Your Trip to {{this.destination}} !</b>
+      </h4>
+      <h5> With {{this.numberOfPeople}} of your Friends </h5>
+      <h5> From : {{this.departureDate}} </h5>
+      <h5> To : {{this.returnDate}} </h5>
+    </div>
+    <hr>
+    <div class="trip-links">
+      <a href="/final-trip/{{this._id}}">Join </a>
+      <a href="/trips/{{this._id}}/edit">Edit</a>
+      <a href="/trips/{{this._id}}/delete">Delete</a>
+      <a href="/invit/{{this._id}}">Invit Your Friends </a>
+      <a href="/create-trip">Let's go on an adventure !</a>
+    </div>
+  </div>
+  </div> --}}
 
-    <button>
-      <a href="/trips/{{this._id}}/delete"> Delete</a>
-    </button>
-    <br> --}} {{!-- </li> --}} {{else}}
-    <p> No Trip Yet</p>
-    <a href="/create-trip">Create a trip</a>
-    {{!-- </ul> --}} {{/each}}
+  <div class="thecard">
+    <div class="card-img">
+      <img src="{{this.imageUrl}}">
+    </div>
+    <div class="card-caption">
+      <!--
+      <i id="like-btn" class="fa fa-thumbs-o-up"></i>-->
+      <span class="date">From :{{this.departureDate}}</span>
+      <span class="date">To : {{this.returnDate}}</span>
+      <h1>Your Trip to {{this.destination}} !</h1>
+      <p>With {{this.numberOfPeople}} of your Friends </p>
+    </div>
+    <div class="card-outmore">
+      <h5>Details</h5>
+      <h6>
+        <a href="/final-trip/{{this._id}}">Join </a>
+      </h6>
+      <h6>
+        <a href="/trips/{{this._id}}/edit">Edit</a>
+      </h6>
+      <h6>
+        <a href="/trips/{{this._id}}/delete">Delete</a>
+      </h6>
+      <h6>
+        <a href="/invit/{{this._id}}">Invit Your Friends </a>
+      </h6>
 
-<hr>
+    </div>
+  </div>
+  </a>
 
-<h1> What is it </h1>
-<p> A very cool way of organizing your trips</p>
+
+  {{else}}
+  <p> No Trip Yet</p>
+  <a href="/create-trip ">Create a trip</a>
+  {{/each}}
+
+  <hr>

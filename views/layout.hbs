@@ -13,6 +13,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Pacifico|Shadows+Into+Light" rel="stylesheet">
 
 </head>
 
@@ -42,19 +43,18 @@
       {{#if blahUser}}
       <a href="/create-trip">Create a Trip</a>
       <a href="/home-user">My Trips</a>
-{{/if}}
-      {{!--
+      {{/if}} {{!--
       <div class="container-btn-login">
         <a href="/login" class="login">Log In</a>
       </div> --}} {{#if blahUser}}
 
 
       <div class="profile">
-        <strong> {{blahUser.username}}</strong>
 
-        <img src="{{blahUser.imageUrl}}" with="5px" height="30px">
+        <strong> Welcome {{blahUser.username}}</strong>
 
-        <a href="/logout"> Log Out</a>
+        <img src="{{blahUser.imageUrl}}" width="25px" height="30px"> {{!--
+        <a href="/logout"> Log Out</a> --}}
       </div>
 
       {{else}}
