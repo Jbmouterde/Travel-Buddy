@@ -7,6 +7,7 @@ body {
   background-image: url("http://www.portail-des-vacances.com/wp-content/uploads/2017/06/Road-trip-en-voiture-comment-le-preparer-avant-le-depart-.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  color : white 
 }
 
 .topnav {
@@ -105,8 +106,10 @@ body {
     -1px 2px 20px rgba(255, 255, 255, 0.6) inset;
 }
 .my-map {
-  height: 300px;
-  width: 300px;
+  height: 500px;
+  width: 500px;
+  margin-left : 50px;
+  float : left;
 }
 .container-title-par {
   position: absolute;
@@ -357,3 +360,15 @@ h5 {
     text-align: left;
   }
 }
+
+
+.acti {
+  float : left ; 
+  margin-left : 30px; 
+  border : 1px solid white;
+
+}
+
+// .message{
+//   margin : 100px
+// }

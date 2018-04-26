@@ -5,6 +5,20 @@ const User = require("../models/user-model");
 const Trip = require("../models/trip-model");
 const Activity = require("../models/activity-model");
 
+// IMAGE
+const multer = require("multer");
+const cloudinary = require("cloudinary");
+const cloudinaryStorage = require("multer-storage-cloudinary");
+
+cloudinary.config({
+  cloud_name: process.env.cloudinary_name,
+  api_key: process.env.cloudinary_key,
+  api_secret: process.env.cloudinary_secret
+});
+
+const storage = cloudinaryStorage({ cloudinary, folder: "project2" });
+
+const upload = multer({ storage });
 // NODEMAILER
 const nodemailer = require("nodemailer");
 
@@ -141,14 +155,6 @@ tripRoutes.post("/create-trip", (req, res, next) => {
 
 //New route for final-trip
 tripRoutes.get("/final-trip/:tripId", (req, res, next) => {
-  //     //must be connected
-
-  //   // if (!req.user){
-  //   //   res.flash("error", "you must be login")
-  //   //   res.redirect("/login")
-  //   //   return
-  //   // }
-
   Activity.find({ trip: req.params.tripId })
     //later
     .populate("trip")
@@ -236,11 +242,23 @@ tripRoutes.get("/trips/:tripId/edit", (req, res, next) => {
 //update trip step 5
 tripRoutes.post("/update-trip/:tripId", (req, res, next) => {
   // res.send(req.body);
-  const { destination } = req.body;
+  const {
+    destination,
+    departureDate,
+    returnDate,
+    departurePlace,
+    numberOfPeople
+  } = req.body;
   Trip.findByIdAndUpdate(
-    req.params.tripId, // which document to update
-    { destination }, // what changes to make
-    { runValidators: true } // extra settings
+    req.params.tripId,
+    {
+      destination,
+      departureDate,
+      returnDate,
+      departurePlace,
+      numberOfPeople
+    },
+    { runValidators: true }
   )
     .then(() => {
       res.redirect(`/home-user`);
