@@ -290,7 +290,7 @@ tripRoutes.post("/email-trip", (req, res, next) => {
       html: `<h1>Hello</h1>
   <p>One of your friends invit you to join a Trip, <br>
   Please use this link to join his group : <br>
-  <a href="http://localhost:3000/final-trip/{{this._id}}">Confirm</a></p>`
+  <a href="http://localhost:3000/final-trip/{{trip._id}}">Confirm</a></p>`
     })
     .then(() => {
       res.redirect("/home-user");
@@ -319,7 +319,8 @@ tripRoutes.get("/final-trip/:tripId/:activityId/delete", (req, res, next) => {
   Activity.findByIdAndRemove(req.params.activityId)
     .then(() => {
       var trip = req.params.tripId;
-      res.redirect("/final-trip/" + trip);
+
+      res.redirect(`/final-trip/${trip}`);
     })
     .catch(err => {
       next(err);
@@ -327,9 +328,10 @@ tripRoutes.get("/final-trip/:tripId/:activityId/delete", (req, res, next) => {
 });
 
 
-// MESSAGE REVIEW IN THE GROUP TRIP // WORKSSSSSSSS
+// MESSAGE REVIEW IN THE GROUP TRIP // 
 tripRoutes.post("/process-review/:tripId", (req, res, next) => {
   const { user, comments, imgUrl } = req.body;
+  console.log(req.body)
   Trip.findByIdAndUpdate(
     req.params.tripId,
     {

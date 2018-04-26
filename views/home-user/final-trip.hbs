@@ -1,4 +1,4 @@
-<h1> Welcome {{blahUser.username}} to your trip {{#each activityList}} {{this.trip.destination}} {{/each}}!
+<h1> Welcome {{blahUser.username}} to your trip   {{#each activityList}}{{this.trip.destination}} {{/each}}!
 </h1>
 
 !</h1>
@@ -49,6 +49,7 @@
 </a>
 </ul>
 
+  {{!-- <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a> --}}
 
 <div class="my-map"></div>
 
@@ -57,7 +58,7 @@
   <h3> The List of Your Activity :</h3>
 
 
-  {{#each activityList}} to : {{this.trip.destination}} {{#if this.isCulture}}
+  {{#each activityList}}  {{#if this.isCulture}}
   <div class="test">
     <h5>{{this.typeOfActivity}} !</h5>
 
@@ -71,14 +72,14 @@
 
   <h6> Name : {{this.name}} </h6>
   <p> Description: {{this.activityDetail}} </p>
-  <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
+    <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
 
   {{/if}} {{/each}} {{#each activityList}} {{#if this.isRestaurant}}
   <h5>{{this.typeOfActivity}} !</h5>
 
   <h6> Name : {{this.name}} </h6>
   <p> Description: {{this.activityDetail}} </p>
-  <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
+    <a href="/final-trip/{{trip._id}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
 
   {{/if}} {{/each}} {{#each activityList}} {{#if this.isHotel}}
   <div class="test">
@@ -86,7 +87,7 @@
 
     <h6> Name : {{this.name}} </h6>
     <p> Description: {{this.activityDetail}} </p>
-    <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
+    <a href="/final-trip/{{trip._id}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
   </div>
   {{/if}} {{/each}}
 
@@ -97,14 +98,14 @@
 
 </ul> --}} {{!-- Comments --}}
 
-<div class="message">
+
   
   <h3>Your Message</h3>
-  <form action="/process-review/{{this.tripId}}" method="POST" enctype="multipart/form-data">
+  <form action="/process-review/{{this.tripId}}" method="POST">
     <label>
       Name :
       <br>
-      <input type="text" name="user" placeholder="Your Name...">
+      <input type="text" name="user" placeholder="Your Name..."/>
     </label>
     <br/>
     <label for="message"> Message :</label>
@@ -112,10 +113,10 @@
     <textarea name="comments">Tell us more about your trip !
   </textarea>
     <br>
-    <label>
+    {{!-- <label>
       Your Pictures:
-      <input type="File" name="imgUrl" class="form-control btn btn-info" placeholder="...">
-    </label>
+      <input type="File" name="imgUrl" class="form-control btn btn-info" placeholder="..."/>
+    </label> --}}
 
 
     <button> Submit Souvenir </button>
@@ -123,7 +124,8 @@
   </form>
 
   <ul>
-    {{#if activityList}} {{#each this.trip.reviews}}
+    {{#if activityList}} 
+    {{#each this.trip.reviews}}
     <li>
       <p> {{this.user}} says : </p>
       <p>"{{this.comments}} "</p>
