@@ -64,7 +64,7 @@
 
     <h6> Name : {{this.name}} </h6>
     <p> Description: {{this.activityDetail}} </p>
-    <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
+    <a href="/final-trip/{{trip._id}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
 
   </div>
   {{/if}} {{/each}} {{#each activityList}} {{#if this.isSport}}
@@ -72,7 +72,7 @@
 
   <h6> Name : {{this.name}} </h6>
   <p> Description: {{this.activityDetail}} </p>
-    <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
+    <a href="/final-trip/{{trip._id}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
 
   {{/if}} {{/each}} {{#each activityList}} {{#if this.isRestaurant}}
   <h5>{{this.typeOfActivity}} !</h5>
