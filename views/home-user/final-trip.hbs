@@ -1,7 +1,14 @@
-<h1> Welcome {{blahUser.username}} to your trip {{activityList.Trip.name}}!</h1>
+<h1> Welcome {{blahUser.username}} to your trip   {{#each activityList}}
+  {{this.trip.destination}} 
+
+  {{/each}}!</h1>
+
+{{!-- {{activityList.tripList.destination}} --}}
+  {{#each activityList}}
+{{ this.trip.reviews}} 
 
 
-
+{{/each}}
 {{!-- // ADD --}}
 <h2>What are you looking for ?</h2>
 
@@ -13,7 +20,7 @@
     <br>
   </label> --}}
 <p>
-       <label for="le_nom">Kind of Activity</label><br />
+       <label for="le_nom">Kind of Activity</label>
        <select name="typeOfActivity" id="le_nom">
            <option name="restaurant" value="restaurant">Restaurant</option>
            <option name="hotel" value="hotel">Hôtel</option>
@@ -46,21 +53,21 @@
 
 </a>
 </ul>
-
-
+ 
+  
 <div class="my-map"></div>
 
 
-
+<div class= "acti">
 <h3> The List of Your Activity :</h3>
 
 
 {{#each activityList}}
-to : {{this.trip.destination}} 
+
 
  {{#if this.isCulture}}
 <div class="test">
-        <h5>{{this.typeOfActivity}} !</h5>
+        <h5>Culture </h5>
      
         <h6> Name : {{this.name}} </h6>
         <p> Description: {{this.activityDetail}} </p>
@@ -71,7 +78,7 @@ to : {{this.trip.destination}}
 {{/each}}
 {{#each activityList}}
  {{#if this.isSport}}
-<h5>{{this.typeOfActivity}} !</h5>
+<h5> Sport </h5>
      
        <h6> Name : {{this.name}} </h6>
         <p> Description: {{this.activityDetail}} </p>
@@ -81,7 +88,7 @@ to : {{this.trip.destination}}
 {{/each}}
 {{#each activityList}}
  {{#if this.isRestaurant}}
-<h5>{{this.typeOfActivity}} !</h5>
+<h5>Restaurant </h5>
      
        <h6> Name : {{this.name}} </h6>
         <p> Description: {{this.activityDetail}} </p>
@@ -92,7 +99,7 @@ to : {{this.trip.destination}}
  {{#each activityList}}
  {{#if this.isHotel}}
  <div class="test">
-<h5>{{this.typeOfActivity}} !</h5>
+<h5>Hôtel </h5>
      
        <h6> Name : {{this.name}} </h6>
         <p> Description: {{this.activityDetail}} </p>
@@ -103,6 +110,7 @@ to : {{this.trip.destination}}
 
 
 </div>
+</div>
 {{!-- <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
 
 </ul> --}}
@@ -110,9 +118,9 @@ to : {{this.trip.destination}}
 
 {{!-- Comments --}}
 
-
+<div class="message">
 <h3>Your Message</h3>
-<form action="/process-review/{{this.tripId}}" method="POST">
+<form action="/process-review/{{this.tripId}}" method="POST"  enctype="multipart/form-data">
   <label>
     Name :
     <br>
@@ -126,7 +134,7 @@ to : {{this.trip.destination}}
   <br>
  <label>
      Your Pictures:
-    <input type="File" name="imgUrl" class="form-control btn btn-info" placeholder="...">
+    <input type="File" name="imgName" class="form-control btn btn-info" placeholder="...">
   </label>
 
 
@@ -134,11 +142,18 @@ to : {{this.trip.destination}}
 
 </form>
 
- {{#each activityList.Trip.reviews}}
- <li> 
+<ul>
+  {{#each activityList}}
+{{#each this.trip.reviews}} 
+  <li> 
     <p> {{this.user}} says : </p>
      <p>"{{this.comments}} "</p>
+     <img src="{{imgUrl}}" with="10px" height="30px">
   </li>
-  {{else}}
-<p> No reviews yet, Write one!</p>
- {{/each}}
+{{else}}
+<p> No Comments yet, Go ahead!</p>
+{{/each}}
+{{/each}}
+</ul>
+
+</div>

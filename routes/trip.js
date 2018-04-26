@@ -5,6 +5,21 @@ const User = require("../models/user-model");
 const Trip = require("../models/trip-model");
 const Activity = require("../models/activity-model");
 
+
+// IMAGE 
+const multer = require("multer");
+const cloudinary = require("cloudinary");
+const cloudinaryStorage = require("multer-storage-cloudinary");
+
+cloudinary.config({
+  cloud_name: process.env.cloudinary_name,
+  api_key: process.env.cloudinary_key,
+  api_secret: process.env.cloudinary_secret
+});
+
+const storage = cloudinaryStorage({ cloudinary, folder: "project2" });
+
+const upload = multer({ storage });
 // NODEMAILER
 const nodemailer = require("nodemailer");
 
@@ -151,7 +166,7 @@ tripRoutes.get("/final-trip/:tripId", (req, res, next) => {
 
   Activity.find({trip:req.params.tripId })
   //later
-  // .populate("Trip")
+  .populate("trip")
   // add the details of the owner
   // .populate("owner")
   .then(activityFromDb => {
@@ -245,12 +260,12 @@ tripRoutes.post("/update-trip/:tripId", (req, res, next) => {
     departurePlace,
     numberOfPeople } = req.body;
   Trip.findByIdAndUpdate(
-    req.params.tripId, // which document to update
+    req.params.tripId, 
     { destination,    departureDate,
       returnDate,
       departurePlace,
-      numberOfPeople }, // what changes to make
-    { runValidators: true } // extra settings
+      numberOfPeople }, 
+    { runValidators: true }
   )
     .then(() => {
       res.redirect(`/home-user`);
@@ -315,20 +330,21 @@ tripRoutes.get("/final-trip/:tripId/:activityId/delete", (req, res, next) => {
   Activity.findByIdAndRemove(req.params.activityId)
     .then(() => {
       var trip = req.params.tripId
-      res.redirect("/final-trip/" + trip);
+      res.redirect("/final-trip/:tripId");
     })
     .catch(err => {
       next(err);
     });
 });
 // MESSAGE REVIEW IN THE GROUP TRIP // WORKSSSSSSSS
-tripRoutes.post('/process-review/:tripId', (req,res,next)=>{
-  const {user, comments,imgUrl}= req.body;
+tripRoutes.post('/process-review/:tripId', upload.single("image"), (req,res,next)=>{
+  const {user, comments}= req.body;
+  const { originlname, secur_url } = req.file;
 Trip.findByIdAndUpdate(
   req.params.tripId,
   {
     $push: {
-      reviews: { user, comments,imgUrl}}
+      reviews: { user, comments, imgName: originlname,imgUrl : secur_url}}
     },
   {runValidators : true}
 )
