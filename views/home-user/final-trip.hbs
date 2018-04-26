@@ -1,4 +1,5 @@
-<h1> Welcome {{blahUser.username}} to your trip {{this.destination}}!</h1>
+<h1> Welcome {{blahUser.username}} to your trip {{activityList.Trip.name}}!</h1>
+
 
 
 {{!-- // ADD --}}
@@ -47,14 +48,16 @@
 </ul>
 
 
-
 <div class="my-map"></div>
+
 
 
 <h3> The List of Your Activity :</h3>
 
 
 {{#each activityList}}
+to : {{this.trip.destination}} 
+
  {{#if this.isCulture}}
 <div class="test">
         <h5>{{this.typeOfActivity}} !</h5>
@@ -109,19 +112,33 @@
 
 
 <h3>Your Message</h3>
-<form action="/process-review/{{trip}}" method="POST">
+<form action="/process-review/{{this.tripId}}" method="POST">
   <label>
     Name :
     <br>
     <input type="text" name="user" placeholder="Your Name...">
   </label>
   <br/>
-  <label for="password"> Message :</label>
+  <label for="message"> Message :</label>
   <br>
-  <textarea name="message">Tell us more about your trip !
+  <textarea name="comments">Tell us more about your trip !
   </textarea>
   <br>
+ <label>
+     Your Pictures:
+    <input type="File" name="imgUrl" class="form-control btn btn-info" placeholder="...">
+  </label>
 
 
   <button> Submit Souvenir </button>
+
 </form>
+
+ {{#each activityList.Trip.reviews}}
+ <li> 
+    <p> {{this.user}} says : </p>
+     <p>"{{this.comments}} "</p>
+  </li>
+  {{else}}
+<p> No reviews yet, Write one!</p>
+ {{/each}}
