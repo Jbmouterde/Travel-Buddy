@@ -1,58 +1,61 @@
-<h1> Welcome {{blahUser.username}} to your trip {{#each activityList}} {{this.trip.destination}} {{/each}}!
-</h1>
+<div class="wrapper-final-trip">
+  <div class="container-final-trip">
+    <h1> Welcome back to your trip, {{blahUser.username}} {{#each activityList}} {{this.trip.destination}} {{/each}}!!
+    </h1>
 
-!</h1>
 
-{{!-- {{activityList.tripList.destination}} --}} {{#each activityList}} {{ this.trip.reviews}} {{/each}} {{!-- // ADD --}}
-<h2>What are you looking for ?</h2>
-
-<form action="/process-activity/{{this.tripId}}" method="POST">
-
-  {{!--
-  <label>
-    Type of Activity :
-    <input type="text" name="typeOfActivity" placeholder="What Kind of Activity? ">
-    <br>
-  </label> --}}
-  <p>
-    <label for="le_nom">Kind of Activity</label>
-    <br />
-    <select name="typeOfActivity" id="le_nom">
-      <option name="restaurant" value="restaurant">Restaurant</option>
-      <option name="hotel" value="hotel">Hôtel</option>
-      <option name="culture" value="culture">Culture</option>
-      <option name="sport" value="sport">Sports</option>
+    {{!-- {{activityList.tripList.destination}} --}}
+    <!--{{#each activityList}} {{ this.trip.reviews}} {{/each}}-->{{!-- // ADD --}}
 
 
 
-    </select>
+    <form action="/process-activity/{{this.tripId}}" method="POST">
 
-    <label>
-      Find Your Activity :
-      <input type="text" name="nameOfActivity" class="location-input" placeholder="Geolocalisation">
+      {{!--
+      <label>
+        Type of Activity :
+        <input type="text" name="typeOfActivity" placeholder="What Kind of Activity? ">
+        <br>
+      </label> --}}
+      <p>
+        <label for="le_nom" id="final-trip">Kind of Activity</label>
+        <br />
+        <select name="typeOfActivity" id="le_nom">
+          <option name="restaurant" value="restaurant">Restaurant</option>
+          <option name="hotel" value="hotel">Hôtel</option>
+          <option name="culture" value="culture">Culture</option>
+          <option name="sport" value="sport">Sports</option>
 
-      <!-- these will be set by out Place Autocomplete -->
-      <input type="hidden" name="latitude" class="lat-input" />
-      <input type="hidden" name="longitude" class="lng-input" />
-    </label>
-    <label>
-      Name :
-      <input type="text" name="name" placeholder="The name ....">
-    </label>
-    <label>
-      Detail :
-      <input type="text" name="activityDetail" placeholder="Some détail ..">
-    </label>
+        </select>
 
-    <button>Add an activity</button>
-</form>
+        <label>
+          Find Your Activity :
+          <input type="text" name="nameOfActivity" class="location-input" placeholder="Geolocalisation">
 
-</a>
-</ul>
+          <!-- these will be set by out Place Autocomplete -->
+          <input type="hidden" name="latitude" class="lat-input" />
+          <input type="hidden" name="longitude" class="lng-input" />
+        </label>
+        <label>
+          Name :
+          <input type="text" name="name" placeholder="The name ....">
+        </label>
+        <label>
+          Detail :
+          <input type="text" name="activityDetail" placeholder="Some détail ..">
+        </label>
+
+        <button>Add an activity</button>
+    </form>
+
+    </a>
+    </ul>
+  </div>
 
 
-<div class="my-map"></div>
-
+  <div class="my-map"></div>
+</div>
+</div>
 
 <div class="acti">
   <h3> The List of Your Activity :</h3>
