@@ -4,11 +4,7 @@
   {{/each}}!</h1>
 
 {{!-- {{activityList.tripList.destination}} --}}
-  {{#each activityList}}
-{{ this.trip.reviews}} 
 
-
-{{/each}}
 {{!-- // ADD --}}
 <h2>What are you looking for ?</h2>
 
@@ -59,55 +55,69 @@
 
 
 <div class= "acti">
-<h3> The List of Your Activity :</h3>
+  <div class="titreActivitiy">
+<h3> List of Your Activity </h3>
+</div>
+<div class="culture">
 
-
+ <h5>Culture </h5>
 {{#each activityList}}
 
 
  {{#if this.isCulture}}
 <div class="test">
-        <h5>Culture </h5>
+       
      
         <h6> Name : {{this.name}} </h6>
         <p> Description: {{this.activityDetail}} </p>
-     <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
+     <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary"> X </a>
       
 </div>
  {{/if}}
 {{/each}}
+</div>
+<div class="sport">
+<h5> Sport </h5>
 {{#each activityList}}
  {{#if this.isSport}}
-<h5> Sport </h5>
+
      
        <h6> Name : {{this.name}} </h6>
         <p> Description: {{this.activityDetail}} </p>
-     <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
+     <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary"> X </a>
 
  {{/if}}
 {{/each}}
+</div>
+<div class="restau">
+<h5>Restaurant </h5>
 {{#each activityList}}
  {{#if this.isRestaurant}}
-<h5>Restaurant </h5>
+
      
        <h6> Name : {{this.name}} </h6>
         <p> Description: {{this.activityDetail}} </p>
-     <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
+     <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary"> X </a>
 
  {{/if}}
+
 {{/each}}
+</div>
+<div class="hotel">
+<h5>Hôtel </h5>
  {{#each activityList}}
  {{#if this.isHotel}}
  <div class="test">
-<h5>Hôtel </h5>
+
      
        <h6> Name : {{this.name}} </h6>
         <p> Description: {{this.activityDetail}} </p>
-     <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
+     <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary"> X </a>
 </div>
  {{/if}}
 {{/each}}
 
+</div>
 
 </div>
 </div>
@@ -134,7 +144,7 @@
   <br>
  <label>
      Your Pictures:
-    <input type="File" name="imgName" class="form-control btn btn-info" placeholder="...">
+    <input type="File" name="imgUrl" class="form-control btn btn-info" placeholder="...">
   </label>
 
 
@@ -154,6 +164,7 @@
 <p> No Comments yet, Go ahead!</p>
 {{/each}}
 {{/each}}
+
 </ul>
 
 </div>

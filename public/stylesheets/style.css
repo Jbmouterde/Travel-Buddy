@@ -168,9 +168,44 @@ body {
     width: 100%;
     text-align: left; } }
 
+.titreActivitiy {
+  border: 1px solid blue;
+  background-color: blue; }
+
 .acti {
   float: left;
   margin-left: 30px;
-  border: 1px solid white; }
+  border: 1px solid white;
+  width: 800px;
+  height: 500px;
+  text-align: center; }
+
+.culture {
+  border: 1px solid white;
+  float: left;
+  width: 25%;
+  background-color: deeppink;
+  height: 455px; }
+
+.restau {
+  border: 1px solid white;
+  float: left;
+  width: 25%;
+  background-color: pink;
+  height: 455px; }
+
+.sport {
+  border: 1px solid white;
+  float: left;
+  width: 25%;
+  background-color: magenta;
+  height: 455px; }
+
+.hotel {
+  border: 1px solid white;
+  float: left;
+  width: 25%;
+  background-color: purple;
+  height: 455px; }
 
 /*# sourceMappingURL=style.css.map */

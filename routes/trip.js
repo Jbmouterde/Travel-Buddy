@@ -336,15 +336,17 @@ tripRoutes.get("/final-trip/:tripId/:activityId/delete", (req, res, next) => {
       next(err);
     });
 });
+
+
 // MESSAGE REVIEW IN THE GROUP TRIP // WORKSSSSSSSS
 tripRoutes.post('/process-review/:tripId', upload.single("image"), (req,res,next)=>{
   const {user, comments}= req.body;
-  const { originlname, secur_url } = req.file;
+  const { originalname, secure_url } = req.file;
 Trip.findByIdAndUpdate(
   req.params.tripId,
   {
     $push: {
-      reviews: { user, comments, imgName: originlname,imgUrl : secur_url}}
+      reviews: { user, comments, imgName: originalename,imgUrl : secure_url}}
     },
   {runValidators : true}
 )
