@@ -1,6 +1,6 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-image: url("http://www.portail-des-vacances.com/wp-content/uploads/2017/06/Road-trip-en-voiture-comment-le-preparer-avant-le-depart-.jpg");
+  background-image: url("https://www.portail-des-vacances.com/wp-content/uploads/2017/06/Road-trip-en-voiture-comment-le-preparer-avant-le-depart-.jpg");
   background-repeat: no-repeat;
   background-size: cover; }
 
@@ -68,16 +68,10 @@ body {
   text-align: center;
   box-shadow: -10px 20px 50px 10px rgba(0, 0, 0, 0.7), -1px 2px 20px rgba(255, 255, 255, 0.6) inset; }
 
-.my-map {
-  height: 500px;
-  width: 500px;
-  margin-left: 50px;
-  float: left; }
-
 .container-title-par {
   position: absolute;
   top: 100px;
-  right: 300px;
+  right: 550px;
   background-color: rgba(223, 235, 247, 0.8);
   display: inline-block;
   padding: 50px;
@@ -104,7 +98,7 @@ body {
   background-color: rgba(223, 235, 247, 0.8);
   display: inline-block;
   padding: 30px;
-  left: 550px;
+  left: 620px;
   text-align: center;
   border-radius: 10px;
   box-shadow: -10px 20px 50px 10px rgba(0, 0, 0, 0.7), -1px 2px 20px rgba(255, 255, 255, 0.6) inset; }
@@ -197,6 +191,35 @@ h5 {
   margin: 0;
   text-decoration: underline; }
 
+.my-map {
+  height: 500px;
+  width: 500px;
+  margin-left: 50px;
+  float: left;
+  position: relative;
+  top: 8px; }
+
+#final-trip {
+  color: black;
+  padding-top: 20px;
+  font-size: 20px;
+  text-decoration: underline; }
+
+.container-final-trip {
+  background-color: rgba(223, 235, 247, 0.8);
+  box-shadow: -10px 20px 50px 10px rgba(0, 0, 0, 0.7), -1px 2px 20px rgba(255, 255, 255, 0.6) inset;
+  transition: 0.3s;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 20px;
+  text-align: center;
+  line-height: 50px; }
+
+.container-final-trip h1 {
+  font-size: 30px;
+  text-decoration: underline; }
+
+/*////////FOOTER*/
 .footer {
   position: fixed;
   left: 0;
@@ -228,6 +251,35 @@ h5 {
   background-color: #666;
   color: white; }
 
+.wrapper-final-message {
+  background-color: rgba(223, 235, 247, 0.8);
+  width: 900px;
+  height: 500px;
+  position: absolute;
+  left: 625px;
+  top: 280px; }
+
+#title-centered {
+  text-align: center; }
+
+.acti {
+  position: relative;
+  left: 280px;
+  top: 10px;
+  display: inline-block;
+  width: 350px;
+  height: 50px;
+  background-color: rgba(142, 156, 173, 0.7);
+  padding: 15px; }
+
+.container-final-message {
+  position: relative;
+  left: 30px;
+  top: 3px;
+  display: inline-block;
+  background-color: rgba(142, 156, 173, 0.7);
+  padding: 3px; }
+
 @media screen and (max-width: 600px) {
   .topnav.responsive {
     position: relative; }
@@ -247,10 +299,5 @@ h5 {
     display: block;
     width: 100%;
     text-align: left; } }
-
-.acti {
-  float: left;
-  margin-left: 30px;
-  border: 1px solid white; }
 
 /*# sourceMappingURL=style.css.map */
