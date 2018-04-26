@@ -6,19 +6,19 @@ const Trip = require("../models/trip-model");
 const Activity = require("../models/activity-model");
 
 // IMAGE
-const multer = require("multer");
-const cloudinary = require("cloudinary");
-const cloudinaryStorage = require("multer-storage-cloudinary");
+// const multer = require("multer");
+// const cloudinary = require("cloudinary");
+// const cloudinaryStorage = require("multer-storage-cloudinary");
 
-cloudinary.config({
-  cloud_name: process.env.cloudinary_name,
-  api_key: process.env.cloudinary_key,
-  api_secret: process.env.cloudinary_secret
-});
+// cloudinary.config({
+//   cloud_name: process.env.cloudinary_name,
+//   api_key: process.env.cloudinary_key,
+//   api_secret: process.env.cloudinary_secret
+// });
 
-const storage = cloudinaryStorage({ cloudinary, folder: "project2" });
+// const storage = cloudinaryStorage({ cloudinary, folder: "project2" });
 
-const upload = multer({ storage });
+// const upload = multer({ storage });
 // NODEMAILER
 const nodemailer = require("nodemailer");
 
@@ -290,7 +290,7 @@ tripRoutes.post("/email-trip", (req, res, next) => {
       html: `<h1>Hello</h1>
   <p>One of your friends invit you to join a Trip, <br>
   Please use this link to join his group : <br>
-  <a href="http://localhost:3000/final-trip/{{this._id}}">Confirm</a></p>`
+  <a href="http://localhost:3000/final-trip/{{trip._id}}">Confirm</a></p>`
     })
     .then(() => {
       res.redirect("/home-user");
@@ -319,15 +319,19 @@ tripRoutes.get("/final-trip/:tripId/:activityId/delete", (req, res, next) => {
   Activity.findByIdAndRemove(req.params.activityId)
     .then(() => {
       var trip = req.params.tripId;
-      res.redirect("/final-trip/" + trip);
+
+      res.redirect(`/final-trip/${trip}`);
     })
     .catch(err => {
       next(err);
     });
 });
-// MESSAGE REVIEW IN THE GROUP TRIP // WORKSSSSSSSS
+
+
+// MESSAGE REVIEW IN THE GROUP TRIP // 
 tripRoutes.post("/process-review/:tripId", (req, res, next) => {
   const { user, comments, imgUrl } = req.body;
+  console.log(req.body)
   Trip.findByIdAndUpdate(
     req.params.tripId,
     {

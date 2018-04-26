@@ -15,7 +15,7 @@ const tripSchema = new Schema(
     description: { type: String }, 
     imageUrl : {type : String}, 
     reviews : [{
-      user : {type : String , required : true}, 
+      user : {type : String }, 
       imgName: { type: String },
       imgUrl: { type: String },
       comments : {type : String}}],

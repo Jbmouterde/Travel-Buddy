@@ -1,13 +1,10 @@
 <div class="wrapper-final-trip">
   <div class="container-final-trip">
-    <h1> Welcome back to your trip, {{blahUser.username}} {{#each activityList}} {{/each}}!!
+    <h1> Welcome {{blahUser.username}} to your trip {{#each activityList}}{{this.trip.destination}} {{/each}}!
     </h1>
 
 
-    {{!-- {{activityList.tripList.destination}} --}}
-    <!--{{#each activityList}} {{ this.trip.reviews}} {{/each}}-->{{!-- // ADD --}}
-
-
+    <h2 id="final-trip">What are you looking for ?</h2>
 
     <form action="/process-activity/{{this.tripId}}" method="POST">
 
@@ -18,8 +15,8 @@
         <br>
       </label> --}}
       <p>
-        <label for="le_nom" id="final-trip">Kind of Activity</label>
-        <br />
+        <label for="le_nom">Kind of Activity</label>
+
         <select name="typeOfActivity" id="le_nom">
           <option name="restaurant" value="restaurant">Restaurant</option>
           <option name="hotel" value="hotel">Hôtel</option>
@@ -51,6 +48,8 @@
     </a>
     </ul>
   </div>
+  {{!--
+  <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a> --}}
 
   <div class="my-map"></div>
 </div>
@@ -60,13 +59,30 @@
   <h5 id="title-centered"> The List of Your Activity :</h5>
   <div class="acti">
 
-    {{#each activityList}} to : {{this.trip.destination}} {{#if this.isCulture}}
+    <select id="">
+      <option name="restaurant" value="restaurant">Restaurant</option>
+    </select>
+
+    <select id="">
+      <option name="hotel" value="hotel">Hôtel</option>
+    </select>
+
+    <select id="">
+      <option name="culture" value="culture">Culture</option>
+
+    </select>
+
+    <select id="">
+      <option name="sport" value="sport">Sports</option>
+    </select>
+
+    {{!-- {{#each activityList}} {{#if this.isCulture}}
     <div class="test">
       <h5>{{this.typeOfActivity}} !</h5>
 
       <h6> Name : {{this.name}} </h6>
       <p> Description: {{this.activityDetail}} </p>
-      <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
+      <a href="/final-trip/{{trip._id}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
 
     </div>
     {{/if}} {{/each}} {{#each activityList}} {{#if this.isSport}}
@@ -74,91 +90,64 @@
 
     <h6> Name : {{this.name}} </h6>
     <p> Description: {{this.activityDetail}} </p>
-    <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
+    <a href="/final-trip/{{trip._id}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
+  </div>
+  {{/if}} {{/each}} {{#each activityList}} {{#if this.isRestaurant}}
+  <h5>{{this.typeOfActivity}} !</h5>
 
-    {{/if}} {{/each}} {{#each activityList}} {{#if this.isRestaurant}}
+  <h6> Name : {{this.name}} </h6>
+  <p> Description: {{this.activityDetail}} </p>
+  <a href="/final-trip/{{trip._id}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
+
+  {{/if}} {{/each}} {{#each activityList}} {{#if this.isHotel}}
+  <div class="test">
     <h5>{{this.typeOfActivity}} !</h5>
 
     <h6> Name : {{this.name}} </h6>
     <p> Description: {{this.activityDetail}} </p>
-    <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
-
-    {{/if}} {{/each}} {{#each activityList}} {{#if this.isHotel}}
-    <div class="test">
-      <h5>{{this.typeOfActivity}} !</h5>
-
-      <h6> Name : {{this.name}} </h6>
-      <p> Description: {{this.activityDetail}} </p>
-      <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
-    </div>
-    {{/if}} {{/each}}
+    <a href="/final-trip/{{trip._id}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
   </div>
-
-  <div class="container-final-message">
-    <div class="message">
-      <h5>Your Message</h5>
-      <form action="/process-review/{{this.tripId}}" method="POST" enctype="multipart/form-data">
-        <label>
-          Name :
-          <br>
-          <input type="text" name="user" placeholder="Your Name...">
-        </label>
-        <br/>
-        <label for="message"> Message :</label>
-        <br>
-        <textarea name="comments">Tell us more about your trip !</textarea>
-    </div>
-
-    <div>
-      <label>
-        Your Pictures:
-        <input type="File" name="imgUrl" class="form-control btn btn-info" placeholder="...">
-      </label>
-      <br>
-      <button> Submit Souvenir </button>
-      <div>
-        <div>
-
-          <!--<a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
-
-  </ul> }} Comments-->
-          {{!--
-          <div class="container-final-message">
-            <div class="message">
-              <h3>Your Message</h3>
-              <form action="/process-review/{{this.tripId}}" method="POST" enctype="multipart/form-data">
-                <label>
-                  Name :
-                  <br>
-                  <input type="text" name="user" placeholder="Your Name...">
-                </label>
-                <br/>
-                <label for="message"> Message :</label>
-                <br>
-                <textarea name="comments">Tell us more about your trip !
-  </textarea> --}} {{!--
-                <br>
-                <div>
-                  < <label>
-                    Your Pictures:
-                    <input type="File" name="imgUrl" class="form-control btn btn-info" placeholder="...">
-                    </label>
-                    <br>
+  {{/if}} {{/each}} --}}
 
 
-                    <button> Submit Souvenir </button>
-                    <div>
-              </form> --}}
+</div>
+{{!--
+<a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
 
-              <ul>
-                {{#each activityList}} {{#each this.trip.reviews}}
-                <li>
-                  <p> {{this.user}} says : </p>
-                  <p>"{{this.comments}} "</p>
-                </li>
-                {{else}}
-                <p> No reviews yet, Write one!</p>
-                {{/each}} {{/each}}
-              </ul>
-              </div>
-              </div>
+</ul> --}} {{!-- Comments --}}
+
+
+
+<h3>Your Message</h3>
+<form action="/process-review/{{this.tripId}}" method="POST">
+  <label>
+    Name :
+    <br>
+    <input type="text" name="user" placeholder="Your Name..." />
+  </label>
+  <br/>
+  <label for="message"> Message :</label>
+  <br>
+  <textarea name="comments">Tell us more about your trip !
+  </textarea>
+  <br> {{!--
+  <label>
+    Your Pictures:
+    <input type="File" name="imgUrl" class="form-control btn btn-info" placeholder="..." />
+  </label> --}}
+
+
+  <button> Submit Souvenir </button>
+
+</form>
+
+<ul>
+  {{#if activityList}} {{#each this.trip.reviews}}
+  <li>
+    <p> {{this.user}} says : </p>
+    <p>"{{this.comments}} "</p>
+  </li>
+  {{else}}
+  <p> No reviews yet, Write one!</p>
+  {{/each}} {{/if}}
+</ul>

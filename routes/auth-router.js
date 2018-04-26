@@ -107,6 +107,48 @@ passport.authenticate("google", {
   failureRedirect : "/login",
   failureFlash : "Google Log in failure!"
 }));
+
+
+// UPDATE THE user
+
+
+
+router.get("setting/:userId", (req, res, next) => {
+  User.findById(req.params.userId)
+    .then(userDetails => {
+      res.locals.userId = req.params.userId;
+      res.locals.blahUser = userDetails;
+      res.render("auth-views/setting");
+    })
+
+    .catch(err => {
+      next(err);
+    });
+});
+
+//update user step 5
+router.post("/update-trip/:tripId", (req, res, next) => {
+  // res.send(req.body);
+  const { destination,   departureDate,
+    returnDate,
+    departurePlace,
+    numberOfPeople } = req.body;
+  Trip.findByIdAndUpdate(
+    req.params.tripId, 
+    { destination,    departureDate,
+      returnDate,
+      departurePlace,
+      numberOfPeople }, 
+    { runValidators: true }
+  )
+    .then(() => {
+      res.redirect(`/home-user`);
+    })
+    .catch(err => {
+      next(err);
+    });
+});
+
 // END GOOGLE LOG IN 
 router.get("/logout", (req, res, next)=>{
   // "req.logout" is passport's method for logging a user out 

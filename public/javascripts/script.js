@@ -62,18 +62,21 @@ axios
     activityList.forEach(oneActivity => {
       console.log(oneActivity)
       const [lat, lng] = oneActivity.nameOfActivity.coordinates;
-      //console.log("ici c'est BK    ", oneActivity.nameOfActivity.coordinates)
       new google.maps.Marker({
         position: { lat, lng },
         map: map,
- 
+        
         animation: google.maps.Animation.DROP
+        
       });
+
     });
   })
   .catch(err => {
     alert("Something went wrong! 💩");
   });
+
+
 
 const locationInput = document.querySelector(".location-input");
 const latInput = document.querySelector(".lat-input");
