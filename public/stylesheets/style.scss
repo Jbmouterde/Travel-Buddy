@@ -4,6 +4,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .topnav {
   background-color: #333;
   overflow: hidden;
@@ -91,8 +92,9 @@ body {
 
 .wrapper-title {
   position: relative;
-
   text-align: center;
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7),
+    -1px 2px 20px rgba(255, 255, 255, 0.6) inset;
 }
 .my-map {
   height: 300px;
@@ -105,6 +107,8 @@ body {
   background-color: rgba(223, 235, 247, 0.8);
   display: inline-block;
   padding: 20px;
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7),
+    -1px 2px 20px rgba(255, 255, 255, 0.6) inset;
 }
 
 .card-1 {
@@ -115,6 +119,8 @@ body {
   display: inline-block;
   padding: 30px;
   text-align: center;
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7),
+    -1px 2px 20px rgba(255, 255, 255, 0.6) inset;
 }
 .card-1 h3 {
   text-decoration: underline;
@@ -128,6 +134,8 @@ body {
   padding: 30px;
   left: 550px;
   text-align: center;
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7),
+    -1px 2px 20px rgba(255, 255, 255, 0.6) inset;
 }
 
 .card-2 h3 {
@@ -142,6 +150,8 @@ body {
   padding: 30px;
   right: 100px;
   text-align: center;
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7),
+    -1px 2px 20px rgba(255, 255, 255, 0.6) inset;
 }
 
 .card-3 h3 {
