@@ -1,6 +1,6 @@
 <div class="wrapper-final-trip">
   <div class="container-final-trip">
-    <h1> Welcome {{blahUser.username}} to your trip {{#each activityList}}{{this.trip.destination}} {{/each}}!
+    <h1> Welcome {{blahUser.username}} to your trip {{#if activityList}}{{this.trip.destination}} {{/if}}!
     </h1>
 
 
