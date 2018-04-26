@@ -88,4 +88,8 @@ app.use("/", trip);
 const activity = require("./routes/activity-router");
 app.use("/", activity);
 
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
 module.exports = app;

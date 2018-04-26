@@ -60,23 +60,19 @@ axios
     const activityList = response.data;
     console.log("tata");
     activityList.forEach(oneActivity => {
-      console.log(oneActivity)
+      console.log(oneActivity);
       const [lat, lng] = oneActivity.nameOfActivity.coordinates;
       new google.maps.Marker({
         position: { lat, lng },
         map: map,
-        
-        animation: google.maps.Animation.DROP
-        
-      });
 
+        animation: google.maps.Animation.DROP
+      });
     });
   })
   .catch(err => {
     alert("Something went wrong! 💩");
   });
-
-
 
 const locationInput = document.querySelector(".location-input");
 const latInput = document.querySelector(".lat-input");
@@ -91,3 +87,17 @@ autocomplete.addListener("place_changed", () => {
   latInput.value = loc.lat();
   lngInput.value = loc.lng();
 });
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches(".dropbtn")) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains("show")) {
+        openDropdown.classList.remove("show");
+      }
+    }
+  }
+};
