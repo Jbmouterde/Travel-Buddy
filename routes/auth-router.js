@@ -41,6 +41,7 @@ router.post('/process-signup',upload.single("image"),  (req,res, next)=>{
     return 
   }
 
+
   const salt = bcrypt.genSaltSync(10);
   const encryptedPassword = bcrypt.hashSync(password, salt);
 
@@ -55,6 +56,9 @@ User.create({firstName,username,name, email, encryptedPassword,  imageName: orig
 });
 });
 
+router.get("/about", (req,res,next)=>{
+  res.render("auth-views/about")
+}); 
 
 // ABOUT LOGIN 
 
