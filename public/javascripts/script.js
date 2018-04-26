@@ -29,18 +29,22 @@ new google.maps.Marker({
   },
   map: map,
   title: "Paris, France",
-  animation: google.maps.Animation.DROP
+  animation: google.maps.Animation.DROP,
+  // animation: google.maps.Animation.BOUNCE
+
 });
 
-new google.maps.Marker({
-  position: {
-    lat: 49.866667,
-    lng: 2.333333
-  },
-  map: map,
-  title: "Paris, France",
-  animation: google.maps.Animation.DROP
-});
+// new google.maps.Marker({
+//   position: {
+//     lat: 49.866667,
+//     lng: 2.333333
+//   },
+//   map: map,
+//   title: "Paris, France",
+//   animation: google.maps.Animation.DROP,
+//   // animation: google.maps.Animation.BOUNCE
+
+// });
 
 navigator.geolocation.getCurrentPosition(result => {
   const { latitude, longitude } = result.coords;
@@ -50,8 +54,7 @@ navigator.geolocation.getCurrentPosition(result => {
     position: { lat: latitude, lng: longitude },
     map: map,
     title: "Your Location",
-    animation: google.maps.Animation.DROP
-    
+    animation: google.maps.Animation.DROP,
   });
 });
 
@@ -68,7 +71,8 @@ axios
         position: { lat, lng },
         map: map,
         
-        animation: google.maps.Animation.DROP
+        animation: google.maps.Animation.DROP,
+
         
       });
 

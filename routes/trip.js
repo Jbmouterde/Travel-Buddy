@@ -290,7 +290,7 @@ tripRoutes.post("/email-trip", (req, res, next) => {
       html: `<h1>Hello</h1>
   <p>One of your friends invit you to join a Trip, <br>
   Please use this link to join his group : <br>
-  <a href="http://localhost:3000/final-trip/{{trip._id}}">Confirm</a></p>`
+  <a href="http://localhost:3000/final-trip/${trip}">Confirm</a></p>`
     })
     .then(() => {
       res.redirect("/home-user");
