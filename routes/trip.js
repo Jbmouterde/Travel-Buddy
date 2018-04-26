@@ -141,67 +141,63 @@ tripRoutes.post("/create-trip", (req, res, next) => {
 
 //New route for final-trip
 tripRoutes.get("/final-trip/:tripId", (req, res, next) => {
-//     //must be connected
+  //     //must be connected
 
-//   // if (!req.user){
-//   //   res.flash("error", "you must be login")
-//   //   res.redirect("/login")
-//   //   return
-//   // }
+  //   // if (!req.user){
+  //   //   res.flash("error", "you must be login")
+  //   //   res.redirect("/login")
+  //   //   return
+  //   // }
 
-  Activity.find({trip:req.params.tripId })
-  //later
-  // .populate("Trip")
-  // add the details of the owner
-  // .populate("owner")
-  .then(activityFromDb => {
-    res.locals.activityList = activityFromDb;
-    res.locals.tripId = req.params.tripId;
+  Activity.find({ trip: req.params.tripId })
+    //later
+    .populate("trip")
+    // add the details of the owner
+    // .populate("owner")
+    .then(activityFromDb => {
+      res.locals.activityList = activityFromDb;
+      res.locals.tripId = req.params.tripId;
 
-    res.render("home-user/final-trip");
-   
+      res.render("home-user/final-trip");
+    })
 
-  })
-
-  .catch(err => {
-    next(err);
-  });
+    .catch(err => {
+      next(err);
+    });
 });
 //  // ACTIVITY SUITE
 tripRoutes.post("/process-activity/:tripId", (req, res, next) => {
-    const {
-      typeOfActivity,
-      activityDetail,
-      name, 
-      latitude,
-      longitude
-    } = req.body;
-    const nameOfActivity = {
-      coordinates: [ latitude, longitude ]};
-    const trip = req.params.tripId
-    Activity.create({
-      typeOfActivity,
-      nameOfActivity,
-      name,
-      activityDetail,
-      trip
+  const {
+    typeOfActivity,
+    activityDetail,
+    name,
+    latitude,
+    longitude
+  } = req.body;
+  const nameOfActivity = {
+    coordinates: [latitude, longitude]
+  };
+  const trip = req.params.tripId;
+  Activity.create({
+    typeOfActivity,
+    nameOfActivity,
+    name,
+    activityDetail,
+    trip
+  })
+    .then(() => {
+      res.redirect("/final-trip/" + trip);
     })
-      .then(() => {
-        res.redirect("/final-trip/" + trip);
-      })
-      .catch(err => {
-        next(err);
-      });
-  });
-  
+    .catch(err => {
+      next(err);
+    });
+});
 
-  // SHOW THE SEED 
+// SHOW THE SEED
 
-/////////////// activity import 
+/////////////// activity import
 ////////////////// Vivian
 // test import info final trip
-
-
 
 // tripRoutes.get("/final-trip", (req, res, next) => {
 //   //must be connected
@@ -253,40 +249,37 @@ tripRoutes.post("/update-trip/:tripId", (req, res, next) => {
       next(err);
     });
 });
-//// NODEMAILER 
-tripRoutes.get("/invit/:tripId", (req,res, next)=>{
-  var trip = req.params.tripId
-  console.log(trip)
-  res.render('home-user/invit');
+//// NODEMAILER
+tripRoutes.get("/invit/:tripId", (req, res, next) => {
+  var trip = req.params.tripId;
+  console.log(trip);
+  res.render("home-user/invit");
 });
 
-
-
-
-//POST 
-tripRoutes.post("/email-trip" , (req, res, next)=>{
- 
-  const {emailFriend} =req.body
-  var trip = req.params.tripId
-transport.sendMail({
-  from :process.env.gmail_user,
-  to: emailFriend,
-  subject: "Join a Trip",
-  text: `Hello,
+//POST
+tripRoutes.post("/email-trip", (req, res, next) => {
+  const { emailFriend } = req.body;
+  var trip = req.params.tripId;
+  transport
+    .sendMail({
+      from: process.env.gmail_user,
+      to: emailFriend,
+      subject: "Join a Trip",
+      text: `Hello,
   One of your friends invit you to join a Trip,
   Please use this link to join his group :  
   http://localhost:3000/final-trip/{{this._id}}`,
-  html: `<h1>Hello</h1>
+      html: `<h1>Hello</h1>
   <p>One of your friends invit you to join a Trip, <br>
   Please use this link to join his group : <br>
   <a href="http://localhost:3000/final-trip/{{this._id}}">Confirm</a></p>`
-})
-.then (()=>{
-res.redirect('/home-user')
-})
-.catch((err)=>{
-  next(err)
-});
+    })
+    .then(() => {
+      res.redirect("/home-user");
+    })
+    .catch(err => {
+      next(err);
+    });
 });
 
 //
@@ -303,12 +296,11 @@ tripRoutes.get("/trips/:tripId/delete", (req, res, next) => {
     });
 });
 
-
 // DELETE AN ACTIVITY
 tripRoutes.get("/final-trip/:tripId/:activityId/delete", (req, res, next) => {
   Activity.findByIdAndRemove(req.params.activityId)
     .then(() => {
-      var trip = req.params.tripId
+      var trip = req.params.tripId;
       res.redirect("/final-trip/" + trip);
     })
     .catch(err => {
@@ -316,36 +308,33 @@ tripRoutes.get("/final-trip/:tripId/:activityId/delete", (req, res, next) => {
     });
 });
 // MESSAGE REVIEW IN THE GROUP TRIP // WORKSSSSSSSS
-tripRoutes.post('/process-review/:tripId', (req,res,next)=>{
-  const {user, comments,imgUrl}= req.body;
-Trip.findByIdAndUpdate(
-  req.params.tripId,
-  {
-    $push: {
-      reviews: { user, comments,imgUrl}}
+tripRoutes.post("/process-review/:tripId", (req, res, next) => {
+  const { user, comments, imgUrl } = req.body;
+  Trip.findByIdAndUpdate(
+    req.params.tripId,
+    {
+      $push: {
+        reviews: { user, comments, imgUrl }
+      }
     },
-  {runValidators : true}
-)
-.then(()=>{
-  res.redirect(`/final-trip/${req.params.tripId}`);
-})
-.catch((err)=>{
-  next(err)
-})
+    { runValidators: true }
+  )
+    .then(() => {
+      res.redirect(`/final-trip/${req.params.tripId}`);
+    })
+    .catch(err => {
+      next(err);
+    });
 });
 
-
-
-
-
-// GOOGLE MAPS TEST  works !! 
+// GOOGLE MAPS TEST  works !!
 
 tripRoutes.get("/act/data", (req, res, next) => {
   Activity.find()
-    .then((tripFromDb) => {
+    .then(tripFromDb => {
       res.json(tripFromDb);
     })
-    .catch((err) => {
+    .catch(err => {
       next(err);
     });
 });

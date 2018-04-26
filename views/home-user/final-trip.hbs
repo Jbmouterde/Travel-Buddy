@@ -1,4 +1,5 @@
-<h1> Welcome {{blahUser.username}} to your trip {{activityList.Trip.name}}!</h1>
+<h1> Welcome {{blahUser.username}} to your trip {{#each activityList}} {{this.trip.destination}} {{/each}}!
+</h1>
 
 
 
@@ -7,41 +8,43 @@
 
 <form action="/process-activity/{{this.tripId}}" method="POST">
 
-  {{!-- <label>
+  {{!--
+  <label>
     Type of Activity :
     <input type="text" name="typeOfActivity" placeholder="What Kind of Activity? ">
     <br>
   </label> --}}
-<p>
-       <label for="le_nom">Kind of Activity</label><br />
-       <select name="typeOfActivity" id="le_nom">
-           <option name="restaurant" value="restaurant">Restaurant</option>
-           <option name="hotel" value="hotel">Hôtel</option>
-           <option name="culture" value="culture">Culture</option>
-           <option name="sport" value="sport">Sports</option>
-          
+  <p>
+    <label for="le_nom">Kind of Activity</label>
+    <br />
+    <select name="typeOfActivity" id="le_nom">
+      <option name="restaurant" value="restaurant">Restaurant</option>
+      <option name="hotel" value="hotel">Hôtel</option>
+      <option name="culture" value="culture">Culture</option>
+      <option name="sport" value="sport">Sports</option>
 
 
-</select>
 
-  <label>
-    Find Your Activity :
-    <input type="text" name="nameOfActivity"  class="location-input" placeholder="Geolocalisation">
+    </select>
 
-  <!-- these will be set by out Place Autocomplete -->
-  <input type="hidden" name="latitude" class="lat-input" />
-  <input type="hidden" name="longitude" class="lng-input" />
-  </label>
- <label>
-    Name :
-    <input type="text" name="name" placeholder="The name ....">
-  </label>
-  <label>
-    Detail :
-    <input type="text" name="activityDetail" placeholder="Some détail ..">
-  </label>
+    <label>
+      Find Your Activity :
+      <input type="text" name="nameOfActivity" class="location-input" placeholder="Geolocalisation">
 
-  <button>Add an activity</button>
+      <!-- these will be set by out Place Autocomplete -->
+      <input type="hidden" name="latitude" class="lat-input" />
+      <input type="hidden" name="longitude" class="lng-input" />
+    </label>
+    <label>
+      Name :
+      <input type="text" name="name" placeholder="The name ....">
+    </label>
+    <label>
+      Detail :
+      <input type="text" name="activityDetail" placeholder="Some détail ..">
+    </label>
+
+    <button>Add an activity</button>
 </form>
 
 </a>
@@ -55,60 +58,45 @@
 <h3> The List of Your Activity :</h3>
 
 
-{{#each activityList}}
-to : {{this.trip.destination}} 
-
- {{#if this.isCulture}}
+{{#each activityList}} to : {{this.trip.destination}} {{#if this.isCulture}}
 <div class="test">
-        <h5>{{this.typeOfActivity}} !</h5>
-     
-        <h6> Name : {{this.name}} </h6>
-        <p> Description: {{this.activityDetail}} </p>
-     <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
-      
-</div>
- {{/if}}
-{{/each}}
-{{#each activityList}}
- {{#if this.isSport}}
-<h5>{{this.typeOfActivity}} !</h5>
-     
-       <h6> Name : {{this.name}} </h6>
-        <p> Description: {{this.activityDetail}} </p>
-     <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
+  <h5>{{this.typeOfActivity}} !</h5>
 
- {{/if}}
-{{/each}}
-{{#each activityList}}
- {{#if this.isRestaurant}}
-<h5>{{this.typeOfActivity}} !</h5>
-     
-       <h6> Name : {{this.name}} </h6>
-        <p> Description: {{this.activityDetail}} </p>
-     <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
+  <h6> Name : {{this.name}} </h6>
+  <p> Description: {{this.activityDetail}} </p>
+  <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
 
- {{/if}}
-{{/each}}
- {{#each activityList}}
- {{#if this.isHotel}}
- <div class="test">
-<h5>{{this.typeOfActivity}} !</h5>
-     
-       <h6> Name : {{this.name}} </h6>
-        <p> Description: {{this.activityDetail}} </p>
-     <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
 </div>
- {{/if}}
-{{/each}}
+{{/if}} {{/each}} {{#each activityList}} {{#if this.isSport}}
+<h5>{{this.typeOfActivity}} !</h5>
+
+<h6> Name : {{this.name}} </h6>
+<p> Description: {{this.activityDetail}} </p>
+<a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
+
+{{/if}} {{/each}} {{#each activityList}} {{#if this.isRestaurant}}
+<h5>{{this.typeOfActivity}} !</h5>
+
+<h6> Name : {{this.name}} </h6>
+<p> Description: {{this.activityDetail}} </p>
+<a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
+
+{{/if}} {{/each}} {{#each activityList}} {{#if this.isHotel}}
+<div class="test">
+  <h5>{{this.typeOfActivity}} !</h5>
+
+  <h6> Name : {{this.name}} </h6>
+  <p> Description: {{this.activityDetail}} </p>
+  <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
+</div>
+{{/if}} {{/each}}
 
 
 </div>
-{{!-- <a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
+{{!--
+<a href="/final-trip/{{trip}}/{{this._id}}/delete" class="btn btn-primary">Del </a>
 
-</ul> --}}
-
-
-{{!-- Comments --}}
+</ul> --}} {{!-- Comments --}}
 
 
 <h3>Your Message</h3>
@@ -124,8 +112,8 @@ to : {{this.trip.destination}}
   <textarea name="comments">Tell us more about your trip !
   </textarea>
   <br>
- <label>
-     Your Pictures:
+  <label>
+    Your Pictures:
     <input type="File" name="imgUrl" class="form-control btn btn-info" placeholder="...">
   </label>
 
@@ -134,11 +122,13 @@ to : {{this.trip.destination}}
 
 </form>
 
- {{#each activityList.Trip.reviews}}
- <li> 
+<ul>
+  {{#each activityList}} {{#each this.trip.reviews}}
+  <li>
     <p> {{this.user}} says : </p>
-     <p>"{{this.comments}} "</p>
+    <p>"{{this.comments}} "</p>
   </li>
   {{else}}
-<p> No reviews yet, Write one!</p>
- {{/each}}
+  <p> No reviews yet, Write one!</p>
+  {{/each}} {{/each}}
+</ul>

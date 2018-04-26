@@ -10,6 +10,7 @@
     crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Pacifico|Shadows+Into+Light" rel="stylesheet">
 
 </head>
 
@@ -46,11 +47,11 @@
 
 
       <div class="profile">
-        <strong> {{blahUser.username}}</strong>
 
-        <img src="{{blahUser.imageUrl}}" with="5px" height="30px">
+        <strong> Welcome {{blahUser.username}}</strong>
 
-        <a href="/logout"> Log Out</a>
+        <img src="{{blahUser.imageUrl}}" width="25px" height="30px"> {{!--
+        <a href="/logout"> Log Out</a> --}}
       </div>
 
       {{else}}
