@@ -391,9 +391,7 @@ h5 {
   height: 500px;
   width: 500px;
   margin-top: 5px;
-  margin-left: 50px;
   float: left;
-  position: relative;
   top: 8px;
   border: 5px solid grey;
   border-radius: 30px;
@@ -412,7 +410,7 @@ h5 {
   box-shadow: -10px 20px 50px 10px rgba(0, 0, 0, 0.7),
     -1px 2px 20px rgba(255, 255, 255, 0.6) inset;
   transition: 0.3s;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 10px;
 
   text-align: center;
@@ -471,6 +469,7 @@ h5 {
   top: 300px;
   margin-top: 10px;
   float: left;
+  border-radius: 10px;
 }
 
 #title-centered {
@@ -487,6 +486,7 @@ h5 {
   height: 420px;
   background-color: rgba(142, 156, 173, 0.7);
   padding: 15px;
+  border-radius: 10px;
 }
 
 .container-final-message {
