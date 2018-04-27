@@ -1,59 +1,67 @@
-<h2> Sign Up </h2>
+<div class="container-form-signup">
 
-<form action="/process-signup" method="POST" enctype="multipart/form-data">
-  <label> 
-    FirstName : 
-<input type="text" name="firstName" class="form-control" placeholder="e.g IronHack name "/>
+  <h2 id="title-create"> Sign Up </h2>
 
-  </label>
-  <br />
-<br /> 
-   <label> 
-    Name : 
-<input type="text" name="name"  class="form-control" placeholder="e.g IronHack name "/>
+  <form id="centered-element" action="/process-signup" method="POST" enctype="multipart/form-data">
+    <label id="centered-element">
+      FirstName :
+      <input id="centered-element" type="text" name="firstName" class="form-control" placeholder="e.g IronHack name " />
 
-  </label> 
-<br />
-<br />
- <label> 
-    Username : 
-<input type="text" name="username" class="form-control" placeholder="e.g IronHack name "/>
-
-  </label> 
-
-<br />
-<br />
-<label>
-  Email : 
-<input type="text" name="email" class="form-control" placeholder="e.g iron@hack.com"/>
-
-</label>
-<br />
-<br />
-<label>
-Password : 
-<input type="password" name="password" class="form-control"  placeholder="e.g ********* "/>
-
-
-</label>
-<br />
-<br />
-
-  <label>
-     Your Profil Picture:
-    <input type="File" name="image" class="form-control btn btn-info" placeholder="...">
-  </label>
-
-
-  <br>
-  <br>
-
- <div class="checkbox">
-    <label>
-      <input type="checkbox"> I want to receive emails from you 🙈
     </label>
-  </div>
-<button class="btn btn-primary"> Sign Up </button>
-</form>
-<button class="btn btn-primary">
-<a href="/google/login"> Sign Up with google</a> </button>
+    <br />
+    <br />
+    <label id="centered-element">
+      Name :
+      <input type="text" name="name" class="form-control" placeholder="e.g IronHack name " />
+
+    </label>
+    <br />
+    <br />
+    <label id="centered-element">
+      Username :
+      <input type="text" name="username" class="form-control" placeholder="e.g IronHack name " />
+
+    </label>
+
+    <br />
+    <br />
+    <label id="centered-element">
+      Email :
+      <input type="text" name="email" class="form-control" placeholder="e.g iron@hack.com" />
+
+    </label>
+    <br />
+    <br />
+    <label id="centered-element">
+      Password :
+      <input type="password" name="password" class="form-control" placeholder="e.g ********* " />
+
+
+    </label>
+    <br />
+    <br />
+
+    <div class="picture">
+      <label id="centered-element">
+        Your Profil Picture:
+        <input type="File" name="image" placeholder="...">
+      </label>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="checkbox">
+      <label>
+        <input type="checkbox"> I want to receive emails from you 🙈
+      </label>
+    </div>
+    <button class="login-btn-2">
+      <a href="#"> Sign Up </a>
+    </button>
+
+    <button class="google-btn-2">
+      <a href="/google/login"> Sign Up with google</a>
+    </button>
+  </form>
+</div>

@@ -1,10 +1,5 @@
-<div class="container-title-form">
-  <h2> Log in </h2>
-</div>
-
-
-
 <div class="container-form-login">
+  <h2 id="title-create"> Log in </h2>
   <form action="/process-login" method="POST">
     <label>
       Username :
@@ -19,9 +14,13 @@
       <br />
     </label>
     <br>
-    <button class="btn btn-primary">Log in </button>
+    <button class="login-btn">
+      <a href="#">Log in</a>
+    </button>
   </form>
 
-  <a href="/google/login" class="btn btn-primary"> Log in with google</a>
+  <button class="google-btn">
+    <a href="/google/login"> Log in with Google</a>
+  </button>
 
 </div>
