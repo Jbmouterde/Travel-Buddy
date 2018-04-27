@@ -149,6 +149,7 @@
     </form>
 
     <div class="form">
+<<<<<<< HEAD
 
       {{#each activityList}} {{#each this.trip.reviews}}
       <div class="comments">
@@ -159,6 +160,19 @@
       <p> No reviews yet, Write one!</p>
       {{/each}} {{/each}}
 
+=======
+      
+        {{#each activityList}} {{#each this.trip.reviews}}
+        <div class="comments">
+          <p> {{this.user}} says :"{{this.comments}}" </p>
+    
+        </div>
+        <hr>
+        {{else}}
+        <p> No reviews yet, Write one!</p>
+        {{/each}} {{/each}}
+      
+>>>>>>> 83ec2e98caa72db8cebed0139223e2be632d719a
     </div>
   </div>
 

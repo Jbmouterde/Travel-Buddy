@@ -356,7 +356,8 @@ h5 {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   text-align: center;
-  overflow: hidden; }
+  overflow: hidden;
+  clear: both; }
 
 .contact {
   font-size: 20px;
