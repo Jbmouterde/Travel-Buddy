@@ -342,7 +342,7 @@ h5 {
 
 /////////MAP
 .my-map {
-  height: 650px;
+  height: 600px;
   width: 500px;
   margin-left: 50px;
   float: left;
@@ -571,9 +571,12 @@ h5 {
 .form {
   border : 1px solid grey;
    height : 90px;
+  border-radius : 10px
+  
 
 }
 
 .comments {
-  display : inline 
+  padding-left : 10px;
+  padding-top : 1px
 }
