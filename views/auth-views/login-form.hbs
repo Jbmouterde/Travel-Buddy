@@ -1,24 +1,27 @@
-<h2> Log in  </h2>
+<div class="container-title-form">
+  <h2> Log in </h2>
+</div>
 
 
 
+<div class="container-form-login">
+  <form action="/process-login" method="POST">
+    <label>
+      Username :
+      <input type="text" name="username" class="form-control" placeholder="Your Username" />
+      <br />
+    </label>
 
-<form action="/process-login" method="POST">
-<label>
-  Username : 
-<input type="text" name="username" class="form-control" placeholder="Your Username"/>
-<br />
-</label>
 
+    <label>
+      Password :
+      <input type="password" name="password" class="form-control" placeholder="e.g ********* " />
+      <br />
+    </label>
+    <br>
+    <button class="btn btn-primary">Log in </button>
+  </form>
 
-<label>
-Password : 
-<input type="password" name="password" class="form-control" placeholder="e.g ********* "/>
-<br />  
-</label>
-<br>
-<button class="btn btn-primary">Log in </button>
-</form>
+  <a href="/google/login" class="btn btn-primary"> Log in with google</a>
 
-<a href="/google/login" class="btn btn-primary"> Log in with google</a>
-
+</div>
