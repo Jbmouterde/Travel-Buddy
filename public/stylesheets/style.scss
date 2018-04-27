@@ -1,8 +1,5 @@
-
-
-
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   // font-family: "Pacifico", cursive;
   // font-family: "Shadows Into Light", cursive;
   // font-family: "Amatic SC", cursive;
@@ -41,6 +38,11 @@ body {
   left: 800px;
 }
 
+.sidenav {
+  position: relative;
+  left: 1200px;
+}
+
 #mySidenav a {
   position: relative;
   right: -80px;
@@ -59,18 +61,26 @@ body {
   color: black;
 }
 
+.links li {
+  list-style-type: none;
+  position: relative;
+  left: 300px;
+}
+
 #about {
-  top: 50px;
+  top: 15px;
+
   background-color: #333;
 }
 
 #blog {
-  top: 137px;
+  top: 47px;
+
   background-color: #333;
 }
 
 #projects {
-  top: 200px;
+  top: 78px;
   background-color: #333;
 }
 
@@ -102,7 +112,7 @@ body {
 // }
 .container-title-par {
   position: absolute;
-  top: 100px;
+  top: 80px;
   right: 550px;
   background-color: rgba(223, 235, 247, 0.8);
   display: inline-block;
@@ -258,8 +268,8 @@ h5 {
   float: left;
   position: relative;
   top: 8px;
-  border : 5px solid grey;
-  border-radius : 30px; 
+  border: 5px solid grey;
+  border-radius: 30px;
 }
 
 ////////////FINAL TRIP
@@ -402,31 +412,31 @@ h5 {
   }
 }
 .culture {
-  float : left; 
-  border : 1px solid white;
-  height : 400px ; 
-  width: 25%
+  float: left;
+  border: 1px solid white;
+  height: 400px;
+  width: 25%;
 }
 
 .hotel {
-  float : left; 
-  border : 1px solid white;
-  height : 400px ; 
-  width: 25%
+  float: left;
+  border: 1px solid white;
+  height: 400px;
+  width: 25%;
 }
 
 .restaurant {
-  float : left; 
-  border : 1px solid white;
-  height : 400px ; 
-  width: 25%
+  float: left;
+  border: 1px solid white;
+  height: 400px;
+  width: 25%;
 }
 
 .sport {
-  float : left; 
-  border : 1px solid white;
-  height : 400px ; 
-  width: 25%
+  float: left;
+  border: 1px solid white;
+  height: 400px;
+  width: 25%;
 }
 // .wrapper-final-message {
 //   position: relative;
