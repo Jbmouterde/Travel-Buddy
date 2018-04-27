@@ -339,4 +339,24 @@ h5 {
   height: 400px;
   width: 25%; }
 
+.culture1 {
+  margin-top: 10px;
+  list-style-type: none;
+  text-align: center; }
+
+.sport1 {
+  margin-top: 10px;
+  list-style-type: none;
+  text-align: center; }
+
+.hotel1 {
+  margin-top: 10px;
+  list-style-type: none;
+  text-align: center; }
+
+.restaurant1 {
+  margin-top: 10px;
+  list-style-type: none;
+  text-align: center; }
+
 /*# sourceMappingURL=style.css.map */

@@ -67,11 +67,11 @@
 
     {{!-- <h5>{{this.typeOfActivity}} !</h5> --}}
 
-    <h6> Name : {{this.name}} </h6>
-    <p> Description: {{this.activityDetail}} </p>
-    <a href="/final-trip/{{trip._id}}/{{this._id}}/delete" class="btn btn-primary"> x </a>
+    <li>Name : {{this.name}} <li/>
+     Description: {{this.activityDetail}} <br>
+    <a href="/final-trip/{{trip._id}}/{{this._id}}/delete" class="boton"> 😮 </a>
 
-
+<hr>
     {{/if}} {{/each}}
     </div>
     </div>
@@ -81,9 +81,11 @@
     {{#each activityList}} {{#if this.isSport}}
     {{!-- <h5>{{this.typeOfActivity}} !</h5> --}}
 
-    <h6> Name : {{this.name}} </h6>
-    <p> Description: {{this.activityDetail}} </p>
-    <a href="/final-trip/{{trip._id}}/{{this._id}}/delete" class="btn btn-primary"> x </a>
+   <li>Name : {{this.name}} <li/>
+     Description: {{this.activityDetail}} <br>
+    <a href="/final-trip/{{trip._id}}/{{this._id}}/delete" class="boton"> 😮 </a>
+
+<hr>
 
     {{/if}} {{/each}}
     </div> 
@@ -93,10 +95,11 @@
     {{#each activityList}} {{#if this.isRestaurant}}
     {{!-- <h5>{{this.typeOfActivity}} !</h5> --}}
 
-    <h6> Name : {{this.name}} </h6>
-    <p> Description: {{this.activityDetail}} </p>
-    <a href="/final-trip/{{trip._id}}/{{this._id}}/delete" class="btn btn-primary"> x </a>
+     <li> Name : {{this.name}} <li/>
+     Description: {{this.activityDetail}} <br>
+    <a href="/final-trip/{{trip._id}}/{{this._id}}/delete" class="boton"> 😮 </a>
 
+<hr>
     {{/if}} {{/each}}
     </div>
     </div>
@@ -107,10 +110,11 @@
  
       {{!-- <h5>{{this.typeOfActivity}} !</h5> --}}
 
-      <h6> Name : {{this.name}} </h6>
-      <p> Description: {{this.activityDetail}} </p>
-      <a href="/final-trip/{{trip._id}}/{{this._id}}/delete" class="btn btn-primary"> x </a>
+      <li> Name : {{this.name}} <li/>
+     Description: {{this.activityDetail}} <br>
+    <a href="/final-trip/{{trip._id}}/{{this._id}}/delete" class="boton"> 😮 </a>
 
+<hr>
 
 
 {{/if}} {{/each}} 
