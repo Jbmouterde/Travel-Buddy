@@ -283,6 +283,30 @@ h5 {
   text-decoration: underline;
 }
 
+///////////UPDATE TRIP
+#title-update {
+  color: white;
+  background-color: rgba(109, 107, 107, 0.6);
+  text-align: center;
+}
+
+.container-update-trip {
+  background-color: rgba(255, 255, 255, 0.6);
+  display: inline-block;
+  position: relative;
+  top: 200px;
+  left: 620px;
+}
+
+.update-btn {
+  border: 1px solid ghostwhite;
+  border-radius: 3px;
+  background-color: rgba(109, 107, 107, 0.6);
+  color: white;
+  position: relative;
+  left: 80px;
+  margin: 10px;
+}
 //////////LOG IN
 
 #title-login {
