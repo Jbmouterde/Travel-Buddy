@@ -128,7 +128,7 @@ $("body > div.wrapper-final-message > div > div.hotel > button").click(function(
 });
 
 
-$("body > div.wrapper-final-message > div > button").click(function(){
+$("body > div.wrapper-final-message > div > form > button:nth-child(1)").click(function(){
   $(".form").slideToggle(1500)
 });
 
