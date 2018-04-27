@@ -75,7 +75,9 @@ axios
 
         
       });
+    
     });
+  
   })
   .catch(err => {
     alert("Something went wrong! 💩");
@@ -124,3 +126,9 @@ $("body > div.wrapper-final-message > div > div.sport > button").click(function(
 $("body > div.wrapper-final-message > div > div.hotel > button").click(function(){
   $(".hotel1").slideToggle(1500)
 });
+
+
+$("body > div.wrapper-final-message > div > button").click(function(){
+  $(".form").slideToggle(1500)
+});
+
