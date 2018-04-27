@@ -60,6 +60,12 @@ router.get("/about", (req,res,next)=>{
   res.render("auth-views/about")
 }); 
 
+
+router.get("/user-info", (req,res,next)=>{
+  res.render("auth-views/info-user")
+}); 
+
+
 // ABOUT LOGIN 
 
 router.get("/login", (req,res,next)=>{

@@ -2,7 +2,10 @@
 
 <div class="wrapper-final-trip">
   <div class="container-final-trip">
-    <h1> Welcome {{blahUser.username}} to your trip {{#if activityList}}{{this.trip.destination}} {{/if}}!
+    <h1> Welcome {{blahUser.username}} to your trip  {{#if activityList}}
+      {{activityDetail}}
+     {{/if}}
+
     </h1>
     <h2 id="final-trip">What are you looking for ?</h2>
 
@@ -156,6 +159,7 @@
           <p> {{this.user}} says :"{{this.comments}} " </p>
     
         </div>
+        <hr>
         {{else}}
         <p> No reviews yet, Write one!</p>
         {{/each}} {{/each}}
