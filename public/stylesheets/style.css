@@ -382,7 +382,7 @@ h5 {
 .wrapper-final-message {
   background-color: rgba(223, 235, 247, 0.8);
   width: 900px;
-  height: 600px;
+  height: 516px;
   top: 300px;
   margin-top: 10px;
   float: left;
@@ -505,5 +505,8 @@ h5 {
   height: 700px;
   width: 500px;
   text-align: center; }
+
+.form {
+  height: 43px; }
 
 /*# sourceMappingURL=style.css.map */
