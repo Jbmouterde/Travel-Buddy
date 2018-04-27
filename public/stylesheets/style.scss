@@ -35,7 +35,7 @@ body {
 
 .container-btn-login {
   position: relative;
-  left: 800px;
+  left: 500px;
 }
 
 // #mySidenav a {
@@ -84,7 +84,7 @@ body {
 
 .profile {
   position: relative;
-  left: 1000px;
+  left: 800px;
   color: white;
   font-size: 20px;
   padding-top: 8px;
@@ -468,10 +468,9 @@ h5 {
   background-color: rgba(223, 235, 247, 0.8);
   width: 900px;
   height: 600px;
-  position: absolute;
-  left: 625px;
   top: 300px;
   margin-top: 10px;
+  float: left;
 }
 
 #title-centered {
