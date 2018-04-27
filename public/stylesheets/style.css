@@ -203,6 +203,27 @@ h5 {
   margin: 0;
   text-decoration: underline; }
 
+#title-update {
+  color: white;
+  background-color: rgba(109, 107, 107, 0.6);
+  text-align: center; }
+
+.container-update-trip {
+  background-color: rgba(255, 255, 255, 0.6);
+  display: inline-block;
+  position: relative;
+  top: 200px;
+  left: 620px; }
+
+.update-btn {
+  border: 1px solid ghostwhite;
+  border-radius: 3px;
+  background-color: rgba(109, 107, 107, 0.6);
+  color: white;
+  position: relative;
+  left: 80px;
+  margin: 10px; }
+
 #title-login {
   color: white;
   background-color: rgba(109, 107, 107, 0.6);
@@ -285,6 +306,18 @@ h5 {
 .btn-create {
   position: relative;
   left: 90px; }
+
+.container-invit {
+  background-color: rgba(255, 255, 255, 0.6);
+  display: inline-block;
+  position: relative;
+  top: 20px;
+  left: 610px;
+  height: 150px; }
+
+.notify-btn {
+  position: relative;
+  left: 60px; }
 
 .my-map {
   height: 500px;
