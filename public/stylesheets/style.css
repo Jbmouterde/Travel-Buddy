@@ -28,22 +28,6 @@ body {
   position: relative;
   left: 800px; }
 
-#mySidenav a {
-  position: relative;
-  right: -80px;
-  transition: 0.3s;
-  padding: 15px;
-  width: 100px;
-  text-decoration: none;
-  font-size: 20px;
-  color: white;
-  border-radius: 0 5px 5px 0; }
-
-#mySidenav a:hover {
-  right: 0;
-  background-color: #ddd;
-  color: black; }
-
 .links li {
   list-style-type: none;
   position: relative; }
@@ -303,8 +287,9 @@ h5 {
   left: 90px; }
 
 .my-map {
-  height: 600px;
+  height: 500px;
   width: 500px;
+  margin-top: 5px;
   margin-left: 50px;
   float: left;
   position: relative;
@@ -324,7 +309,6 @@ h5 {
   transition: 0.3s;
   border-radius: 5px;
   padding: 10px;
-  margin-top: -45px;
   text-align: center;
   line-height: 50px; }
 
@@ -367,11 +351,11 @@ h5 {
 .wrapper-final-message {
   background-color: rgba(223, 235, 247, 0.8);
   width: 900px;
-  height: 500px;
+  height: 600px;
   position: absolute;
   left: 625px;
   top: 300px;
-  margin-top: 50px; }
+  margin-top: 10px; }
 
 #title-centered {
   text-align: center;
