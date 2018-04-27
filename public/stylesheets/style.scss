@@ -258,6 +258,8 @@ h5 {
   float: left;
   position: relative;
   top: 8px;
+  border : 5px solid grey;
+  border-radius : 30px; 
 }
 
 ////////////FINAL TRIP
@@ -403,24 +405,28 @@ h5 {
   float : left; 
   border : 1px solid white;
   height : 400px ; 
+  width: 25%
 }
 
 .hotel {
   float : left; 
   border : 1px solid white;
   height : 400px ; 
+  width: 25%
 }
 
 .restaurant {
   float : left; 
   border : 1px solid white;
   height : 400px ; 
+  width: 25%
 }
 
 .sport {
   float : left; 
   border : 1px solid white;
   height : 400px ; 
+  width: 25%
 }
 // .wrapper-final-message {
 //   position: relative;

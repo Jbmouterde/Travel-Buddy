@@ -197,7 +197,9 @@ h5 {
   margin-left: 50px;
   float: left;
   position: relative;
-  top: 8px; }
+  top: 8px;
+  border: 5px solid grey;
+  border-radius: 30px; }
 
 #final-trip {
   color: black;
@@ -221,7 +223,7 @@ h5 {
 
 /*////////FOOTER*/
 .footer {
-  position: relative;
+  position: fixed;
   left: 0;
   bottom: 0;
   height: 70px;
@@ -316,21 +318,25 @@ h5 {
 .culture {
   float: left;
   border: 1px solid white;
-  height: 400px; }
+  height: 400px;
+  width: 25%; }
 
 .hotel {
   float: left;
   border: 1px solid white;
-  height: 400px; }
+  height: 400px;
+  width: 25%; }
 
 .restaurant {
   float: left;
   border: 1px solid white;
-  height: 400px; }
+  height: 400px;
+  width: 25%; }
 
 .sport {
   float: left;
   border: 1px solid white;
-  height: 400px; }
+  height: 400px;
+  width: 25%; }
 
 /*# sourceMappingURL=style.css.map */
