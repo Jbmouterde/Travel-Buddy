@@ -265,7 +265,7 @@ h5 {
   color: white; }
 
 .my-map {
-  height: 500px;
+  height: 650px;
   width: 500px;
   margin-left: 50px;
   float: left;
@@ -296,14 +296,16 @@ h5 {
 
 /*////////FOOTER*/
 .footer {
-  position: fixed;
   left: 0;
+  z-index: 9;
   bottom: 0;
   height: 70px;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   text-align: center;
-  overflow: hidden; }
+  overflow: hidden;
+  margin-top: 20px;
+  clear: both; }
 
 .contact {
   font-size: 20px;
@@ -329,11 +331,13 @@ h5 {
 .wrapper-final-message {
   background-color: rgba(223, 235, 247, 0.8);
   width: 900px;
-  height: 500px;
-  position: absolute;
+  height: 600px;
   left: 625px;
-  top: 300px;
-  margin-top: 50px; }
+  top: 600px;
+  margin-top: 5px;
+  float: left;
+  border-radius: 10px;
+  margin-left: 10px; }
 
 #title-centered {
   text-align: center;
@@ -432,5 +436,12 @@ h5 {
   margin-top: 10px;
   list-style-type: none;
   text-align: center; }
+
+.form {
+  border: 1px solid grey;
+  height: 90px; }
+
+.comments {
+  display: inline; }
 
 /*# sourceMappingURL=style.css.map */
