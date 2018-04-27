@@ -268,7 +268,8 @@ h5 {
   height: 500px;
   position: absolute;
   left: 625px;
-  top: 270px; }
+  top: 270px;
+  margin-top: 50px; }
 
 #title-centered {
   text-align: center;
