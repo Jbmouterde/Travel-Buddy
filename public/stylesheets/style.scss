@@ -308,14 +308,17 @@ h5 {
 
 /*////////FOOTER*/
 .footer {
-  position: fixed;
+  
+  position: relative;
   left: 0;
-  bottom: 0;
+  z-index: 9;
+  // bottom: 0;
   height: 70px;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   text-align: center;
   overflow: hidden;
+  margin-top : 20px
 }
 
 .contact {
