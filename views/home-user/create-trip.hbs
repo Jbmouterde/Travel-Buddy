@@ -1,7 +1,7 @@
 <!-- views/auth/signup.hbs -->
 
-<div class="container-form">
-  <h2>Create Your Trip</h2>
+<div class="container-form-create">
+  <h2 id="title-create">Create Your Trip</h2>
 
   <form action="/create-trip" method="POST" id="form-container">
 
@@ -44,9 +44,9 @@
     <br>
 
     <p>
-      <label for="le_nom">Kind Of Trip</label>
+      <label id="kind-trip" for="le_nom">Kind Of Trip</label>
       <br />
-      <select name="typeOfTrip" id="le_nom">
+      <select id="kind-trip" name="typeOfTrip">
         <option name="work" value="work">Work</option>
         <option name="friends" value="friends">Friends</option>
         <option name="culture" value="culture">Culture</option>
@@ -56,15 +56,15 @@
       <br>
 
 
-      <label for="password"> Description of your Trip :</label>
+      <label id="description-trip" for="password"> Description of your Trip :</label>
       <br>
-      <textarea>Tell us more about your trip !
+      <textarea id="description-trip">Tell us more about your trip !
   </textarea>
 
       <br>
       <br>
 
-      <button>
+      <button class="btn-create">
         Create Your Amazing Trip
       </button>
 

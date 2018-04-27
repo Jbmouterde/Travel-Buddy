@@ -100,7 +100,13 @@ body {
   box-shadow: -10px 20px 50px 10px rgba(0, 0, 0, 0.7), -1px 2px 20px rgba(255, 255, 255, 0.6) inset; }
 
 .card-1 h3 {
-  text-decoration: underline; }
+  text-decoration: underline;
+  font-size: 30px;
+  padding-bottom: 10px; }
+
+.card-1 p {
+  font-size: 20px;
+  line-height: 16px; }
 
 .card-2 {
   position: absolute;
@@ -114,7 +120,13 @@ body {
   box-shadow: -10px 20px 50px 10px rgba(0, 0, 0, 0.7), -1px 2px 20px rgba(255, 255, 255, 0.6) inset; }
 
 .card-2 h3 {
-  text-decoration: underline; }
+  text-decoration: underline;
+  font-size: 30px;
+  padding-bottom: 10px; }
+
+.card-2 p {
+  font-size: 20px;
+  line-height: 16px; }
 
 .card-3 {
   position: absolute;
@@ -128,7 +140,13 @@ body {
   box-shadow: -10px 20px 50px 10px rgba(0, 0, 0, 0.7), -1px 2px 20px rgba(255, 255, 255, 0.6) inset; }
 
 .card-3 h3 {
-  text-decoration: underline; }
+  text-decoration: underline;
+  font-size: 30px;
+  padding-bottom: 10px; }
+
+.card-3 p {
+  font-size: 20px;
+  line-height: 16px; }
 
 .title-home-user {
   color: white; }
@@ -264,8 +282,28 @@ h5 {
   background-color: rgba(109, 107, 107, 0.6);
   color: white; }
 
+.container-form-create {
+  background-color: rgba(255, 255, 255, 0.6);
+  display: inline-block;
+  position: relative;
+  top: 20px;
+  left: 610px;
+  height: 600px; }
+
+#kind-trip {
+  position: relative;
+  left: 140px; }
+
+#description-trip {
+  position: relative;
+  left: 100px; }
+
+.btn-create {
+  position: relative;
+  left: 90px; }
+
 .my-map {
-  height: 650px;
+  height: 500px;
   width: 500px;
   margin-left: 50px;
   float: left;
@@ -296,16 +334,14 @@ h5 {
 
 /*////////FOOTER*/
 .footer {
+  position: fixed;
   left: 0;
-  z-index: 9;
   bottom: 0;
   height: 70px;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   text-align: center;
-  overflow: hidden;
-  margin-top: 20px;
-  clear: both; }
+  overflow: hidden; }
 
 .contact {
   font-size: 20px;
@@ -331,13 +367,11 @@ h5 {
 .wrapper-final-message {
   background-color: rgba(223, 235, 247, 0.8);
   width: 900px;
-  height: 600px;
+  height: 500px;
+  position: absolute;
   left: 625px;
-  top: 600px;
-  margin-top: 5px;
-  float: left;
-  border-radius: 10px;
-  margin-left: 10px; }
+  top: 300px;
+  margin-top: 50px; }
 
 #title-centered {
   text-align: center;
@@ -436,12 +470,5 @@ h5 {
   margin-top: 10px;
   list-style-type: none;
   text-align: center; }
-
-.form {
-  border: 1px solid grey;
-  height: 90px; }
-
-.comments {
-  display: inline; }
 
 /*# sourceMappingURL=style.css.map */
