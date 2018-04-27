@@ -223,7 +223,7 @@ h5 {
   transition: 0.3s;
   border-radius: 5px;
   padding: 10px;
-  margin-top: 20px;
+  margin-top: -45px;
   text-align: center;
   line-height: 50px; }
 
@@ -269,7 +269,7 @@ h5 {
   height: 500px;
   position: absolute;
   left: 625px;
-  top: 270px;
+  top: 250px;
   margin-top: 50px; }
 
 #title-centered {
