@@ -124,7 +124,7 @@
 
     </ul>
 
-    <button>Your Message : </button>
+    <button>Hide Message : </button>
     <form action="/process-review/{{this.tripId}}" method="POST">
 
 
@@ -136,7 +136,7 @@
 
       <label for="message"> Message :</label>
 
-      <input name="comments" placeholder="Tell us more about your trip !">
+      <input name="comments" placeholder="Tell us about your trip !">
       </input>
       {{!--
       <br>
@@ -150,16 +150,16 @@
     </form>
 
     <div class="form">
-      <ul>
+      
         {{#each activityList}} {{#each this.trip.reviews}}
-        <li>
-          <p> {{this.user}} says : </p>
-          <p>"{{this.comments}} "</p>
-        </li>
+        <div class="comments">
+          <p> {{this.user}} says :"{{this.comments}} " </p>
+    
+        </div>
         {{else}}
         <p> No reviews yet, Write one!</p>
         {{/each}} {{/each}}
-      </ul>
+      
     </div>
   </div>
 

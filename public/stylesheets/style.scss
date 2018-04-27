@@ -309,10 +309,10 @@ h5 {
 /*////////FOOTER*/
 .footer {
   
-  position: relative;
+  // position: absolute;
   left: 0;
   z-index: 9;
-  // bottom: 0;
+  bottom: 0;
   height: 70px;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
@@ -320,6 +320,7 @@ h5 {
   overflow: hidden;
   margin-top : 20px;
   clear : both; 
+  
 }
 
 .contact {
@@ -494,4 +495,14 @@ h5 {
   margin-top: 10px;
   list-style-type: none;
   text-align: center;
+}
+
+.form {
+  border : 1px solid grey;
+   height : 90px;
+
+}
+
+.comments {
+  display : inline 
 }
