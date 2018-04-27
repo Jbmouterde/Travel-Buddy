@@ -128,8 +128,8 @@ $("body > div.wrapper-final-message > div > div.hotel > button").click(function(
 });
 
 
-$("body > div.wrapper-final-message > div > form > button:nth-child(1)").click(function(){
-  $(".form").slideToggle(1500)
+$("body > div.wrapper-final-trip > div.container-final-trip > button").click(function(){
+  $("body > div.wrapper-final-message > div > div.form").slideToggle(1500)
 });
 
 // LINK MARKER 

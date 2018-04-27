@@ -491,7 +491,8 @@ h5 {
 .form {
   border: 1px solid grey;
   height: 90px;
-  border-radius: 10px; }
+  border-radius: 10px;
+  display: none; }
 
 .comments {
   padding-left: 10px;
