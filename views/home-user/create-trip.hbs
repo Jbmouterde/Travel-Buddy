@@ -1,66 +1,71 @@
-
-
 <!-- views/auth/signup.hbs -->
-<h2>Create Your Trip</h2>
 
-<form action="/create-trip" method="POST" id="form-container">
+<div class="container-form">
+  <h2>Create Your Trip</h2>
 
-
-  <label for="FirstName">Destination : </label>
-  <input id="firstname" type="text" name="destination"  placeholder="What's Your Destination">
-
-  <br>
-  <br>
-
-  <label for="Name">Departure Date : </label>
-  <input id="name" type="date" name="departureDate" placeholder="When do you leave? ">
-
-  <br>
-  <br>
-  <label for="Name">Return Date : </label>
-  <input id="name" type="date" name="returnDate" placeholder="When do you come back? ">
-
-  <br>
-  <br>
-
-  <label for="username">Leaving From :</label>
-  <input id="username" type="text" name="departurePlace" placeholder="From where ?...">
-
-  <br>
-  <br>
+  <form action="/create-trip" method="POST" id="form-container">
 
 
-  <label for="password">Number of participants :</label>
-  <input id="password" type="number" name="numberOfPeople" placeholder="How many are you ? ">
+    <label for="FirstName">Destination : </label>
+    <input id="firstname" type="text" name="destination" placeholder="What's Your Destination">
 
-  <br>
-  <br>
- 
+    <br>
+    <br>
+
+    <label for="Name">Departure Date : </label>
+    <input id="name" type="date" name="departureDate" placeholder="When do you leave? ">
+
+    <br>
+    <br>
+    <label for="Name">Return Date : </label>
+    <input id="name" type="date" name="returnDate" placeholder="When do you come back? ">
+
+    <br>
+    <br>
+
+    <label for="username">Leaving From :</label>
+    <input id="username" type="text" name="departurePlace" placeholder="From where ?...">
+
+    <br>
+    <br>
+
+
+    <label for="password">Number of participants :</label>
+    <input id="password" type="number" name="numberOfPeople" placeholder="How many are you ? ">
+
+    <br>
+    <br>
+
 
     <label for="text">Your image group: </label>
-  <input  type="text" name="imageUrl" placeholder="url of your background image">
+    <input type="text" name="imageUrl" placeholder="url of your background image">
 
-  <br>
-  <br>
+    <br>
+    <br>
 
-<p>
-       <label for="le_nom">Kind Of Trip</label><br />
-       <select name="typeOfTrip" id="le_nom">
-           <option name="work" value="work">Work</option>
-           <option name="friends" value="friends">Friends</option>
-           <option name="culture" value="culture">Culture</option>
-          
-                   
-</select>
-<br>
-  <label for="password"> Description of your Trip :</label>
-  <br>
-  <textarea>Tell us more about your trip !
+    <p>
+      <label for="le_nom">Kind Of Trip</label>
+      <br />
+      <select name="typeOfTrip" id="le_nom">
+        <option name="work" value="work">Work</option>
+        <option name="friends" value="friends">Friends</option>
+        <option name="culture" value="culture">Culture</option>
+
+
+      </select>
+      <br>
+
+      <div class="clearfixed">
+        <label for="password"> Description of your Trip :</label>
+        <br>
+        <textarea>Tell us more about your trip !
   </textarea>
 
-  <br>
-  <br>
+        <br>
+        <br>
 
-  <button>
-    Create Your Amazing Trip
-  </button>
+        <button>
+          Create Your Amazing Trip
+        </button>
+      </div>
+</div>

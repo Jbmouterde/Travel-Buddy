@@ -201,6 +201,9 @@ h5 {
   margin: 0;
   text-decoration: underline; }
 
+.container-title-form {
+  color: white; }
+
 .my-map {
   height: 500px;
   width: 500px;
