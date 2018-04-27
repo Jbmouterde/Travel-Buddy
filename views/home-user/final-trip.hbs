@@ -3,7 +3,6 @@
     <h1> Welcome {{blahUser.username}} to your trip {{#if activityList}}{{this.trip.destination}} {{/if}}!
     </h1>
 
-
     <h2 id="final-trip">What are you looking for ?</h2>
 
     <form action="/process-activity/{{this.tripId}}" method="POST">
