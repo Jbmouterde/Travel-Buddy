@@ -471,22 +471,26 @@ h5 {
 .culture1 {
   margin-top: 10px;
   list-style-type: none;
-  text-align: center; }
+  text-align: center;
+  display: none; }
 
 .sport1 {
   margin-top: 10px;
   list-style-type: none;
-  text-align: center; }
+  text-align: center;
+  display: none; }
 
 .hotel1 {
   margin-top: 10px;
   list-style-type: none;
-  text-align: center; }
+  text-align: center;
+  display: none; }
 
 .restaurant1 {
   margin-top: 10px;
   list-style-type: none;
-  text-align: center; }
+  text-align: center;
+  display: none; }
 
 .form {
   border: 1px solid grey;
