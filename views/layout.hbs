@@ -2,6 +2,9 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>BUDDY TRAVEL 
 
   </title>
@@ -67,10 +70,12 @@
     </div>
 
     {{#if blahUser}}
-    <div id="mySidenav" class="sidenav">
+    <div id="mySidenav" class="sidenav ">
+      
       <a href="/signup" id="about">User Infos</a>
-      <a href="/logout" id="projects">Log Out</a>
+   
       <a href="/setting/{{blahUser.Id}}" id="blog">Settings</a>
+         <a href="/logout" id="projects">Log Out</a>
 
     </div>
     {{/if}}
@@ -85,7 +90,7 @@
     <div class="wrapper-contact">
       <a href="/about" class="contact">Contact Us</a>
     </div>
-
+{{!-- <p> Made with love by Jeremie & J-B </p> --}}
     <div class="icon-bar">
       <a href="#" class="facebook">
         <i class="fa fa-facebook"></i>

@@ -42,7 +42,7 @@ body {
 }
 
 #mySidenav a {
-  position: absolute;
+  position: relative;
   right: -80px;
   transition: 0.3s;
   padding: 15px;
@@ -258,6 +258,8 @@ h5 {
   float: left;
   position: relative;
   top: 8px;
+  border : 5px solid grey;
+  border-radius : 30px; 
 }
 
 ////////////FINAL TRIP
@@ -290,7 +292,7 @@ h5 {
   position: fixed;
   left: 0;
   bottom: 0;
-  height: 80px;
+  height: 70px;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   text-align: center;
@@ -399,7 +401,33 @@ h5 {
     text-align: left;
   }
 }
+.culture {
+  float : left; 
+  border : 1px solid white;
+  height : 400px ; 
+  width: 25%
+}
 
+.hotel {
+  float : left; 
+  border : 1px solid white;
+  height : 400px ; 
+  width: 25%
+}
+
+.restaurant {
+  float : left; 
+  border : 1px solid white;
+  height : 400px ; 
+  width: 25%
+}
+
+.sport {
+  float : left; 
+  border : 1px solid white;
+  height : 400px ; 
+  width: 25%
+}
 // .wrapper-final-message {
 //   position: relative;
 //   left: 20px;
